@@ -1,0 +1,10 @@
+In file included from /Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.m:9:
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.h:16: error: syntax error before 'GroceryGetterViewController'
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.h:19: error: syntax error before 'GroceryGetterViewController'
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.m: In function '-[NewIngredientViewController textFieldDidEndEditing:]':
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.m:25: error: 'recipesController' undeclared (first use in this function)
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.m:25: error: (Each undeclared identifier is reported only once
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.m:25: error: for each function it appears in.)
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.m: At top level:
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.m:71: warning: property 'recipeName' requires method '-recipeName' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/NewIngredientViewController.m:71: warning: property 'recipeName' requires the method 'setRecipeName:' to be defined - use @synthesize, @dynamic or provide a method implementation

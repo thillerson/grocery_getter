@@ -1,0 +1,5 @@
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/IngredientsViewController.m: In function '-[IngredientsViewController tableView:didSelectRowAtIndexPath:]':
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/IngredientsViewController.m:59: warning: 'GroceryGetterViewController' may not respond to '-displayAddNewIngredientsScreen:'
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/IngredientsViewController.m:59: warning: (Messages without a matching method signature
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/IngredientsViewController.m:59: warning: will be assumed to return 'id' and accept
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/IngredientsViewController.m:59: warning: '...' as arguments.)

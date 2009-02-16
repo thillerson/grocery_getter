@@ -1,0 +1,7 @@
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterViewController.m: In function '-[GroceryGetterViewController displayAddNewIngredientsScreen:]':
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterViewController.m:16: warning: 'GroceryGetterAppDelegate' may not respond to '-displayAddNewIngredientsScreen:'
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterViewController.m:16: warning: (Messages without a matching method signature
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterViewController.m:16: warning: will be assumed to return 'id' and accept
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterViewController.m:16: warning: '...' as arguments.)
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterViewController.m: In function '-[GroceryGetterViewController addIngredient:forRecipe:]':
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterViewController.m:25: warning: 'GroceryGetterAppDelegate' may not respond to '-addIngredient:forRecipe:'
