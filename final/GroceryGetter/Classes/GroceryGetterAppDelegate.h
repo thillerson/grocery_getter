@@ -2,36 +2,21 @@
 //  GroceryGetterAppDelegate.h
 //  GroceryGetter
 //
-//  Created by Tony Hillerson on 2/14/09.
+//  Created by Tony Hillerson on 2/16/09.
 //  Copyright __MyCompanyName__ 2009. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class GroceryGetterViewController;
-@class IngredientsViewController;
-@class NewIngredientViewController;
+@class RootViewController;
 
 @interface GroceryGetterAppDelegate : NSObject <UIApplicationDelegate> {
-	NSMutableDictionary *data;
-    IBOutlet UIWindow *window;
-    IBOutlet GroceryGetterViewController *recipesController;
-	IBOutlet UINavigationController *navController;
-	IBOutlet IngredientsViewController *ingredientsController;
-	IBOutlet NewIngredientViewController *newIngredientController;
+    UIWindow *window;
+    RootViewController *rootViewController;
 }
 
-@property (nonatomic, retain) UIWindow *window;
-@property (nonatomic, retain) GroceryGetterViewController *recipesController;
-@property (nonatomic, retain) NewIngredientViewController *newIngredientController;
-
-@property (readonly) NSArray *recipes;
-
-- (void) recipeClicked:(NSString *)recipeName;
-- (void) addNewRecipeNamed:(NSString *)recipeName;
-- (void) removeIngredient:(NSString *)ingredientName forRecipe:(NSString *)recipeName;
-- (void) addIngredient:(NSString *)ingredientName forRecipe:(NSString *)recipeName;
-- (void) displayAddNewIngredientsScreen:(NSString *)recipeName;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
 
 @end
 
