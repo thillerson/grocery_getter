@@ -6,9 +6,9 @@
 //  Copyright __MyCompanyName__ 2009. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "GroceryListViewController.h"
 
-@implementation MainViewController
+@implementation GroceryListViewController
 
 # pragma mark Table View Delegate Methods
 

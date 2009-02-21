@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+
+@interface GroceryListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UITableView *tableView;
-	IBOutlet UINavigationController *navigationController;
 }
 
 @end

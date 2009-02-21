@@ -8,20 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@class MainViewController;
+@class GroceryListViewController;
 @class FlipsideViewController;
 
 @interface RootViewController : UIViewController {
+	UINavigationController *mainNavController;
 	UIToolbar *toolbar;
     UIBarButtonItem *settingsButton;
-    MainViewController *mainViewController;
+    GroceryListViewController *mainViewController;
     FlipsideViewController *flipsideViewController;
     UINavigationBar *flipsideNavigationBar;
 }
 
+@property (nonatomic, retain) IBOutlet UINavigationController *mainNavController;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *settingsButton;
-@property (nonatomic, retain) MainViewController *mainViewController;
+@property (nonatomic, retain) GroceryListViewController *mainViewController;
 @property (nonatomic, retain) UINavigationBar *flipsideNavigationBar;
 @property (nonatomic, retain) FlipsideViewController *flipsideViewController;
 

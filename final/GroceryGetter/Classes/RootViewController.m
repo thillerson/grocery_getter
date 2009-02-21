@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-#import "MainViewController.h"
+#import "GroceryListViewController.h"
 #import "FlipsideViewController.h"
 
 
@@ -16,6 +16,7 @@
 @synthesize toolbar;
 @synthesize settingsButton;
 @synthesize flipsideNavigationBar;
+@synthesize mainNavController;
 @synthesize mainViewController;
 @synthesize flipsideViewController;
 
@@ -23,11 +24,12 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
+    GroceryListViewController *viewController = [[GroceryListViewController alloc] initWithNibName:@"GroceryListView" bundle:nil];
     self.mainViewController = viewController;
     [viewController release];
     
-    [self.view insertSubview:mainViewController.view belowSubview:toolbar];
+	mainNavController.viewControllers = [NSArray arrayWithObject:mainViewController];
+    [self.view insertSubview:mainNavController.view belowSubview:toolbar];
 }
 
 
