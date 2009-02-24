@@ -9,6 +9,7 @@
 #import "GroceryGetterAppDelegate.h"
 #import "GroceryListViewController.h"
 #import "AddGroceryListItemViewController.h"
+#import "GroceryListItem.h"
 
 @implementation GroceryGetterAppDelegate
 
@@ -16,11 +17,34 @@
 @synthesize navigationController;
 @synthesize groceryListController;
 @synthesize addListItemController;
+@synthesize currentGroceryList;
 
-#pragma mark Interface Builder Actions
+#pragma mark List Item API
+
+- (void) addItemToList:(GroceryListItem *)newItem {
+	[currentGroceryList addObject:newItem];
+}
+
+- (void) updateItem:(GroceryListItem *)item atIndex:(NSInteger)index {
+	
+}
+
+- (void) deleteItemAtIndex:(NSInteger)index {
+	[currentGroceryList removeObjectAtIndex:index];
+}
+
+- (void) setUpData {
+	self.currentGroceryList = [NSMutableArray arrayWithObjects:[[GroceryListItem alloc] initWithTitle:@"Foo"], [[GroceryListItem alloc] initWithTitle:@"Bar"], nil];
+}
+
+#pragma mark Navigation Actions
+
+- (IBAction) doneEditingItem {
+	//TODO make sure the editing view is actually the top?
+	[navigationController popViewControllerAnimated:YES];
+}
 
 - (void) showAddItemView {
-	addListItemController.title = @"Add an Item";
 	[navigationController pushViewController:addListItemController animated:YES];
 }
 
@@ -35,6 +59,7 @@
 #pragma mark Standard Methods
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
+	[self setUpData];
 	navigationController.viewControllers = [NSArray arrayWithObject:groceryListController];
     
     [window insertSubview:navigationController.view belowSubview:toolbar];
@@ -49,6 +74,5 @@
     [window release];
     [super dealloc];
 }
-
 
 @end

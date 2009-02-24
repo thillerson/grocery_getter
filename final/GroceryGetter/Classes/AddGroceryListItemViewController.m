@@ -8,8 +8,23 @@
 
 #import "GroceryGetterAppDelegate.h"
 #import "AddGroceryListItemViewController.h"
+#import "GroceryListItem.h"
 
 @implementation AddGroceryListItemViewController
+
+#pragma mark Text Field methods
+
+- (void)textFieldDidEndEditing:(UITextField *)tf {
+	[appDelegate doneEditingItem];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)tf {
+	if ([textField.text length] > 0) {
+		[appDelegate addItemToList:[[GroceryListItem alloc] initWithTitle:textField.text]];
+	}
+	[textField resignFirstResponder];
+	return YES;
+}
 
 #pragma mark Table Data Source Methods
 
@@ -23,6 +38,10 @@
         cell = tableViewCell;
     }
     return cell;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[textField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

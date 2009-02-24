@@ -8,12 +8,21 @@
 
 #import "GroceryGetterAppDelegate.h"
 #import "GroceryListViewController.h"
+#import "GroceryListItem.h"
 
 @implementation GroceryListViewController
 
 - (void) showAddItemView {
 	[appDelegate showAddItemView];
 }
+
+- (void) checkCell:(UITableViewCell *)cell checked:(BOOL)b {
+	if (b) {
+		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	} else {
+		cell.accessoryType = UITableViewCellAccessoryNone;
+	}
+}	
 
 #pragma mark Editing Methods
 
@@ -34,18 +43,16 @@
 	} else {
 		// toggle checked value of item at index path
 		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-		if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
-			cell.accessoryType = UITableViewCellAccessoryNone;
-		} else {
-			cell.accessoryType = UITableViewCellAccessoryCheckmark;
-		}
+		GroceryListItem *item = [appDelegate.currentGroceryList objectAtIndex:indexPath.row];
+		[item toggleComplete];
+		[self checkCell:cell checked:item.complete];
 	}
 }
 
 #pragma mark Table Data Source Methods
 
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
-	return 1;
+	return [appDelegate.currentGroceryList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,8 +61,17 @@
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"groceryListItem"] autorelease];
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
-    cell.text = @"Foobag";
+	GroceryListItem *itemAtIndex = [appDelegate.currentGroceryList objectAtIndex:indexPath.row];
+    cell.text = itemAtIndex.title;
+	[self checkCell:cell checked:itemAtIndex.complete];
     return cell;
+}
+
+- (void) tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (editingStyle == UITableViewCellEditingStyleDelete) {
+		[appDelegate deleteItemAtIndex:indexPath.row];
+		[tv reloadData];
+	}
 }
 
 #pragma mark Standard Methods

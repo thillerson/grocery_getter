@@ -10,11 +10,11 @@
 
 @class GroceryGetterAppDelegate;
 
-@interface AddGroceryListItemViewController : UIViewController <UITableViewDataSource> {
+@interface AddGroceryListItemViewController : UIViewController <UITableViewDataSource, UITextFieldDelegate> {
 	IBOutlet GroceryGetterAppDelegate *appDelegate;
 	IBOutlet UITableView *tableView;
 	IBOutlet UITableViewCell *tableViewCell;
-	IBOutlet UITextField *textView;
+	IBOutlet UITextField *textField;
 }
 
 @end

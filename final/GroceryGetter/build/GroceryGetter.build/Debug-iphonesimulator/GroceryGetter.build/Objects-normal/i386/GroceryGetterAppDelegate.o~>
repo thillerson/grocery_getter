@@ -1,0 +1,3 @@
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterAppDelegate.m:78: warning: incomplete implementation of class 'GroceryGetterAppDelegate'
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterAppDelegate.m:78: warning: method definition for '-deleteItem:' not found
+/Users/tony/work/grocery_getter/final/GroceryGetter/Classes/GroceryGetterAppDelegate.m:78: warning: method definition for '-updateItem:' not found

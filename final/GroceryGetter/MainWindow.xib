@@ -96,6 +96,7 @@
 				</object>
 			</object>
 			<object class="IBUIViewController" id="869717482">
+				<string key="IBUITitle">Add an Item</string>
 				<string key="IBUINibName">AddGroceryListItemView</string>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 			</object>
