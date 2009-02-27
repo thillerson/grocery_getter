@@ -14,6 +14,13 @@
 
 #pragma mark Text Field methods
 
+- (void) doneEditingItem {
+	if ([textField.text length] > 0) {
+		[appDelegate addItemToList:[[GroceryListItem alloc] initWithTitle:textField.text]];
+	}
+	[appDelegate doneEditingItem];
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)tf {
 	[appDelegate doneEditingItem];
 }
@@ -38,6 +45,14 @@
         cell = tableViewCell;
     }
     return cell;
+}
+
+#pragma mark Standard Methods
+
+- (void) viewDidLoad {
+	[super viewDidLoad];
+	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:appDelegate action:@selector(doneEditingItem)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(doneEditingItem)] autorelease];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

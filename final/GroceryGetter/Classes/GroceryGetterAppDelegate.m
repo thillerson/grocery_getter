@@ -9,6 +9,7 @@
 #import "GroceryGetterAppDelegate.h"
 #import "GroceryListViewController.h"
 #import "AddGroceryListItemViewController.h"
+#import "QuickAddViewController.h"
 #import "GroceryListItem.h"
 
 @implementation GroceryGetterAppDelegate
@@ -18,6 +19,7 @@
 @synthesize groceryListController;
 @synthesize addListItemController;
 @synthesize currentGroceryList;
+@synthesize quickAddList;
 
 #pragma mark List Item API
 
@@ -39,21 +41,39 @@
 
 #pragma mark Navigation Actions
 
+- (void) showToolbar {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1];
+    [UIView setAnimationTransition:UIViewAnimationCurveLinear forView:toolbar cache:YES];
+	[window addSubview:toolbar];
+	[UIView commitAnimations];
+}
+
+- (void) hideToolbar {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1];
+    [UIView setAnimationTransition:UIViewAnimationCurveLinear forView:toolbar cache:YES];
+	[toolbar removeFromSuperview];
+	[UIView commitAnimations];
+}
+
 - (IBAction) doneEditingItem {
-	//TODO make sure the editing view is actually the top?
+	[self showToolbar];
 	[navigationController popViewControllerAnimated:YES];
 }
 
 - (void) showAddItemView {
+	[self hideToolbar];
 	[navigationController pushViewController:addListItemController animated:YES];
 }
 
-- (IBAction) showQuickAddList {
-	
+- (IBAction) showQuickAdd:(id)sender {
+	[self hideToolbar];
+	[navigationController pushViewController:quickAddViewController animated:YES];
 }
 
-- (IBAction) showSettingsView {
-	
+- (IBAction) showSettingsView:(id)sender {
+	[self hideToolbar];
 }
 
 #pragma mark Standard Methods
