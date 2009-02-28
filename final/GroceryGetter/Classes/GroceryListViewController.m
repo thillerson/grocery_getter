@@ -27,19 +27,21 @@
 #pragma mark Editing Methods
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-	if(self.editing != editing) {
-		[super setEditing:editing animated:animated];
-		[tableView setEditing:editing animated:animated];
+	[super setEditing:editing animated:animated];
+	[tableView setEditing:editing animated:animated];
+	if(editing) {
+		self.navigationItem.rightBarButtonItem.enabled = NO;
+	} else {
+		self.navigationItem.rightBarButtonItem.enabled = YES;
 	}
 }
 
 #pragma mark Table Delegate Methods
 
 - (void)tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	// deselect row
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	if (self.editing) {
-		
+		[appDelegate showEditItemViewForItem:[appDelegate.currentGroceryList objectAtIndex:indexPath.row]];
 	} else {
 		// toggle checked value of item at index path
 		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -47,6 +49,11 @@
 		[item toggleComplete];
 		[self checkCell:cell checked:item.complete];
 	}
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+	GroceryListItem *item = [appDelegate.currentGroceryList objectAtIndex:sourceIndexPath.row];
+	item.position = destinationIndexPath.row;
 }
 
 #pragma mark Table Data Source Methods

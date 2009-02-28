@@ -10,15 +10,32 @@
 #import "AddGroceryListItemViewController.h"
 #import "GroceryListItem.h"
 
+
 @implementation AddGroceryListItemViewController
+
+@synthesize itemToEdit;
+
+- (void) saveItem {
+	if ([textField.text length] > 0) {
+		if (nil != itemToEdit) {
+			itemToEdit.title = textField.text;
+		} else {
+			[appDelegate addItemToList:[[GroceryListItem alloc] initWithTitle:textField.text]];
+		}
+	}
+}
+
+- (void) doneEditingItem {
+	[self saveItem];
+	[appDelegate doneEditingItem];
+}
 
 #pragma mark Text Field methods
 
-- (void) doneEditingItem {
-	if ([textField.text length] > 0) {
-		[appDelegate addItemToList:[[GroceryListItem alloc] initWithTitle:textField.text]];
+- (void)textFieldDidBeginEditing:(UITextField *)tf {
+	if (nil != itemToEdit) {
+		[textField setText:itemToEdit.title];
 	}
-	[appDelegate doneEditingItem];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)tf {
@@ -26,9 +43,7 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)tf {
-	if ([textField.text length] > 0) {
-		[appDelegate addItemToList:[[GroceryListItem alloc] initWithTitle:textField.text]];
-	}
+	[self saveItem];
 	[textField resignFirstResponder];
 	return YES;
 }
@@ -57,6 +72,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[textField becomeFirstResponder];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+	itemToEdit = nil;
 }
 
 - (void)didReceiveMemoryWarning {

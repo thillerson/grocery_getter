@@ -15,6 +15,9 @@
 	IBOutlet UITableView *tableView;
 	IBOutlet UITableViewCell *tableViewCell;
 	IBOutlet UITextField *textField;
+	GroceryListItem *itemToEdit;
 }
+
+@property (nonatomic, retain) GroceryListItem *itemToEdit;
 
 @end

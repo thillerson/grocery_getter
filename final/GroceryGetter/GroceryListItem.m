@@ -11,9 +11,7 @@
 
 @implementation GroceryListItem
 
-@synthesize listItemId;
-@synthesize title;
-@synthesize complete;
+@synthesize listItemId, title, complete, position;
 
 - (GroceryListItem *) initWithTitle:(NSString *)t {
 	if (self = [super init]) {

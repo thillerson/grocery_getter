@@ -32,11 +32,13 @@
 @property (nonatomic, retain) NSMutableArray *quickAddList;
 
 - (void) addItemToList:(GroceryListItem *)newItem;
+- (void) addItemsToList:(NSArray *)newItems;
 - (void) updateItem:(GroceryListItem *)item atIndex:(NSInteger)index;
 - (void) deleteItemAtIndex:(NSInteger)index;
 
-- (IBAction) doneEditingItem;
 - (void) showAddItemView;
+- (void) showEditItemViewForItem:(GroceryListItem *)item;
+- (IBAction) doneEditingItem;
 - (IBAction) showSettingsView:(id)sender;
 - (IBAction) showQuickAdd:(id)sender;
 

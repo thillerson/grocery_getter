@@ -20,6 +20,7 @@
 		EAF54BC60F58931C00DBBFBC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */; };
 		EAF54BCA0F58942D00DBBFBC /* QuickAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF54BC90F58942D00DBBFBC /* QuickAddViewController.m */; };
 		EAF54BCC0F58946500DBBFBC /* QuickAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF54BCB0F58946500DBBFBC /* QuickAddView.xib */; };
+		EAF747840F58FA7600967CF4 /* QuickListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF747830F58FA7600967CF4 /* QuickListItem.m */; };
 		EAF748AB0F512689007BBAF9 /* AddGroceryListItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF748AA0F512689007BBAF9 /* AddGroceryListItemViewController.m */; };
 		EAF748CB0F512746007BBAF9 /* AddGroceryListItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF748CA0F512746007BBAF9 /* AddGroceryListItemView.xib */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,8 @@
 		EAF54BC80F58942D00DBBFBC /* QuickAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickAddViewController.h; sourceTree = "<group>"; };
 		EAF54BC90F58942D00DBBFBC /* QuickAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickAddViewController.m; sourceTree = "<group>"; };
 		EAF54BCB0F58946500DBBFBC /* QuickAddView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickAddView.xib; sourceTree = "<group>"; };
+		EAF747820F58FA7600967CF4 /* QuickListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickListItem.h; sourceTree = "<group>"; };
+		EAF747830F58FA7600967CF4 /* QuickListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickListItem.m; sourceTree = "<group>"; };
 		EAF748A90F512689007BBAF9 /* AddGroceryListItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddGroceryListItemViewController.h; path = Classes/AddGroceryListItemViewController.h; sourceTree = "<group>"; };
 		EAF748AA0F512689007BBAF9 /* AddGroceryListItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddGroceryListItemViewController.m; path = Classes/AddGroceryListItemViewController.m; sourceTree = "<group>"; };
 		EAF748CA0F512746007BBAF9 /* AddGroceryListItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddGroceryListItemView.xib; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				EAAF74D90F53599200857BBC /* GroceryListItem.m */,
 				EAF54B5C0F54A8B000DBBFBC /* DatabaseHelper.h */,
 				EAF54B5D0F54A8B000DBBFBC /* DatabaseHelper.m */,
+				EAF747820F58FA7600967CF4 /* QuickListItem.h */,
+				EAF747830F58FA7600967CF4 /* QuickListItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				EAAF74DA0F53599200857BBC /* GroceryListItem.m in Sources */,
 				EAF54B5E0F54A8B000DBBFBC /* DatabaseHelper.m in Sources */,
 				EAF54BCA0F58942D00DBBFBC /* QuickAddViewController.m in Sources */,
+				EAF747840F58FA7600967CF4 /* QuickListItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

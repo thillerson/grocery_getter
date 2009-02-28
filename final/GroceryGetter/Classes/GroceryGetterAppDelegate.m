@@ -11,6 +11,7 @@
 #import "AddGroceryListItemViewController.h"
 #import "QuickAddViewController.h"
 #import "GroceryListItem.h"
+#import "QuickListItem.h"
 
 @implementation GroceryGetterAppDelegate
 
@@ -27,8 +28,11 @@
 	[currentGroceryList addObject:newItem];
 }
 
+- (void) addItemsToList:(NSArray *)newItems {
+	[currentGroceryList addObjectsFromArray:newItems];
+}
+
 - (void) updateItem:(GroceryListItem *)item atIndex:(NSInteger)index {
-	
 }
 
 - (void) deleteItemAtIndex:(NSInteger)index {
@@ -37,6 +41,7 @@
 
 - (void) setUpData {
 	self.currentGroceryList = [NSMutableArray arrayWithObjects:[[GroceryListItem alloc] initWithTitle:@"Foo"], [[GroceryListItem alloc] initWithTitle:@"Bar"], nil];
+	self.quickAddList = [NSMutableArray arrayWithObjects:[[QuickListItem alloc] initWithTitle:@"Milk"], [[QuickListItem alloc] initWithTitle:@"Water"], nil];
 }
 
 #pragma mark Navigation Actions
@@ -64,6 +69,14 @@
 
 - (void) showAddItemView {
 	[self hideToolbar];
+	addListItemController.title = @"Add Item";
+	[navigationController pushViewController:addListItemController animated:YES];
+}
+
+- (void) showEditItemViewForItem:(GroceryListItem *)item {
+	[self hideToolbar];
+	addListItemController.itemToEdit = item;
+	addListItemController.title = @"Edit Item";
 	[navigationController pushViewController:addListItemController animated:YES];
 }
 

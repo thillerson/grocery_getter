@@ -13,6 +13,10 @@
 @interface QuickAddViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 	IBOutlet UITableView *tableView;
 	IBOutlet GroceryGetterAppDelegate *appDelegate;
+	IBOutlet UIBarButtonItem *editButton;
+	NSMutableDictionary *chosenItemTitles;
 }
+
+- (IBAction) editButtonPressed:(id)sender;
 
 @end
