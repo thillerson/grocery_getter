@@ -88,7 +88,7 @@
 							<object class="IBUISwitch" id="431263474">
 								<reference key="NSNextResponder" ref="1060963555"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{206, 8}, {94, 27}}</string>
+								<string key="NSFrame">{{183, 8}, {94, 27}}</string>
 								<reference key="NSSuperview" ref="1060963555"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
