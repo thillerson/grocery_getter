@@ -9,18 +9,14 @@
 #import "GroceryGetterAppDelegate.h"
 #import "GroceryListViewController.h"
 #import "AddGroceryListItemViewController.h"
+#import "SettingsViewController.h"
 #import "QuickAddViewController.h"
 #import "GroceryListItem.h"
 #import "QuickListItem.h"
 
 @implementation GroceryGetterAppDelegate
 
-@synthesize window;
-@synthesize navigationController;
-@synthesize groceryListController;
-@synthesize addListItemController;
-@synthesize currentGroceryList;
-@synthesize quickAddList;
+@synthesize window, navigationController, groceryListController, addListItemController, currentGroceryList, quickAddList;
 
 #pragma mark List Item API
 
@@ -70,6 +66,34 @@
 	[UIView commitAnimations];
 }
 
+- (void) toggleSettingsView {
+    UIView *mainView = navigationController.view;
+    UIView *settingsView = settingsViewController.view;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1];
+    [UIView setAnimationTransition:([mainView superview] ? UIViewAnimationTransitionFlipFromRight : UIViewAnimationTransitionFlipFromLeft) forView:window cache:YES];
+    if ([mainView superview] != nil) {
+        [settingsViewController viewWillAppear:YES];
+        [groceryListController viewWillDisappear:YES];
+        [mainView removeFromSuperview];
+        [toolbar removeFromSuperview];
+        [window addSubview:settingsView];
+        [groceryListController viewDidDisappear:YES];
+        [settingsViewController viewDidAppear:YES];
+		
+    } else {
+        [groceryListController viewWillAppear:YES];
+        [settingsViewController viewWillDisappear:YES];
+        [settingsView removeFromSuperview];
+        [window addSubview:toolbar];
+        [window insertSubview:mainView belowSubview:toolbar];
+        [settingsViewController viewDidDisappear:YES];
+        [groceryListController viewDidAppear:YES];
+    }
+    [UIView commitAnimations];
+}
+
 - (IBAction) doneEditingItem {
 	[self showToolbar];
 	[navigationController popViewControllerAnimated:YES];
@@ -94,9 +118,12 @@
 }
 
 - (IBAction) showSettingsView:(id)sender {
-	[self hideToolbar];
+	[self toggleSettingsView];
 }
 
+- (void) settingsViewDone {
+	[self toggleSettingsView];
+}
 #pragma mark Standard Methods
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {

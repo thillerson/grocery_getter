@@ -13,6 +13,7 @@
 @class QuickAddViewController;
 @class GroceryListItem;
 @class QuickListItem;
+@class SettingsViewController;
 
 @interface GroceryGetterAppDelegate : NSObject <UIApplicationDelegate> {
 	NSMutableArray *currentGroceryList;
@@ -22,6 +23,7 @@
 	IBOutlet UIToolbar *toolbar;
     GroceryListViewController *groceryListController;
 	AddGroceryListItemViewController *addListItemController;
+	IBOutlet SettingsViewController *settingsViewController;
 	IBOutlet QuickAddViewController *quickAddViewController;
 }
 
@@ -39,6 +41,7 @@
 - (void) deleteItemAtIndex:(NSInteger)index;
 - (void) deleteQuickListItemAtIndex:(NSInteger)index;
 
+- (void) settingsViewDone;
 - (void) showAddItemView;
 - (void) showEditItemViewForItem:(GroceryListItem *)item;
 - (IBAction) doneEditingItem;
