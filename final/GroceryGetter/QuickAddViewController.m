@@ -8,6 +8,7 @@
 
 #import "QuickAddViewController.h"
 #import "GroceryGetterAppDelegate.h"
+#import "AddQuickAddItemViewController.h"
 #import "QuickListItem.h"
 #import "GroceryListItem.h"
 
@@ -21,7 +22,7 @@
 }
 
 - (void) addQuickListItem {
-	
+	[self presentModalViewController:quickItemEditController animated:YES];
 }
 
 - (IBAction) editButtonPressed:(id)sender {
@@ -50,12 +51,13 @@
 
 - (void)tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	QuickListItem *item = [appDelegate.quickAddList objectAtIndex:indexPath.row];
 	if (self.editing) {
-		
+		quickItemEditController.itemToEdit = item;
+		[self presentModalViewController:quickItemEditController animated:YES];
 	} else {
 		// toggle checked value of item at index path
 		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-		QuickListItem *item = [appDelegate.quickAddList objectAtIndex:indexPath.row];
 		if (cell.accessoryType == UITableViewCellAccessoryNone) {
 			[chosenItemTitles setValue:item.title forKey:item.title];
 			cell.accessoryType = UITableViewCellAccessoryCheckmark;

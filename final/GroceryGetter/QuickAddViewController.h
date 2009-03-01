@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class GroceryGetterAppDelegate;
+@class AddQuickAddItemViewController;
 
 @interface QuickAddViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 	IBOutlet UITableView *tableView;
 	IBOutlet GroceryGetterAppDelegate *appDelegate;
+	IBOutlet AddQuickAddItemViewController *quickItemEditController;
 	IBOutlet UIBarButtonItem *editButton;
 	NSMutableDictionary *chosenItemTitles;
 }

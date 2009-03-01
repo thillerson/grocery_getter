@@ -16,6 +16,8 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* GroceryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* GroceryListViewController.m */; };
 		EAAF74DA0F53599200857BBC /* GroceryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAF74D90F53599200857BBC /* GroceryListItem.m */; };
+		EABB18690F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB18680F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m */; };
+		EABB186C0F5A108600BF2C75 /* AddQuickAddItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */; };
 		EAF54B5E0F54A8B000DBBFBC /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF54B5D0F54A8B000DBBFBC /* DatabaseHelper.m */; };
 		EAF54BC60F58931C00DBBFBC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */; };
 		EAF54BCA0F58942D00DBBFBC /* QuickAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF54BC90F58942D00DBBFBC /* QuickAddViewController.m */; };
@@ -41,6 +43,9 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAAF74D80F53599200857BBC /* GroceryListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryListItem.h; sourceTree = "<group>"; };
 		EAAF74D90F53599200857BBC /* GroceryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryListItem.m; sourceTree = "<group>"; };
+		EABB18670F5A0F5C00BF2C75 /* AddQuickAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuickAddItemViewController.h; sourceTree = "<group>"; };
+		EABB18680F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddQuickAddItemViewController.m; sourceTree = "<group>"; };
+		EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddQuickAddItemView.xib; sourceTree = "<group>"; };
 		EAF54B5C0F54A8B000DBBFBC /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
 		EAF54B5D0F54A8B000DBBFBC /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
 		EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -117,6 +122,7 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				EAF748CA0F512746007BBAF9 /* AddGroceryListItemView.xib */,
 				EAF54BCB0F58946500DBBFBC /* QuickAddView.xib */,
+				EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -154,6 +160,8 @@
 				EAF748AA0F512689007BBAF9 /* AddGroceryListItemViewController.m */,
 				EAF54BC80F58942D00DBBFBC /* QuickAddViewController.h */,
 				EAF54BC90F58942D00DBBFBC /* QuickAddViewController.m */,
+				EABB18670F5A0F5C00BF2C75 /* AddQuickAddItemViewController.h */,
+				EABB18680F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m */,
 			);
 			name = "Main View Controllers";
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 				2899E5220DE3E06400AC0155 /* GroceryGetterViewController.xib in Resources */,
 				EAF748CB0F512746007BBAF9 /* AddGroceryListItemView.xib in Resources */,
 				EAF54BCC0F58946500DBBFBC /* QuickAddView.xib in Resources */,
+				EABB186C0F5A108600BF2C75 /* AddQuickAddItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +231,7 @@
 				EAF54B5E0F54A8B000DBBFBC /* DatabaseHelper.m in Sources */,
 				EAF54BCA0F58942D00DBBFBC /* QuickAddViewController.m in Sources */,
 				EAF747840F58FA7600967CF4 /* QuickListItem.m in Sources */,
+				EABB18690F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

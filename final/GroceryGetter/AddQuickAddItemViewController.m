@@ -1,16 +1,16 @@
 //
-//  AddGroceryListItem.m
+//  AddQuickAddItemViewController.m
 //  GroceryGetter
 //
-//  Created by Tony Hillerson on 2/21/09.
+//  Created by Tony Hillerson on 2/28/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
 #import "GroceryGetterAppDelegate.h"
-#import "AddGroceryListItemViewController.h"
-#import "GroceryListItem.h"
+#import "AddQuickAddItemViewController.h"
+#import "QuickListItem.h"
 
-@implementation AddGroceryListItemViewController
+@implementation AddQuickAddItemViewController
 
 @synthesize itemToEdit;
 
@@ -19,14 +19,23 @@
 		if (nil != itemToEdit) {
 			itemToEdit.title = textField.text;
 		} else {
-			[appDelegate addItemToList:[[GroceryListItem alloc] initWithTitle:textField.text]];
+			[appDelegate addItemToQuickList:[[QuickListItem alloc] initWithTitle:textField.text]];
 		}
 	}
 }
 
 - (void) doneEditingItem {
 	[self saveItem];
-	[appDelegate doneEditingItem];
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction) cancel:(id)sender {
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction) save:(id)sender {
+	[self saveItem];
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark Text Field methods
@@ -38,7 +47,7 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)tf {
-	[appDelegate doneEditingItem];
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)tf {
@@ -54,19 +63,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"editListItemCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addQuickListItemCell"];
     if (cell == nil) {
-        cell = tableViewCell;
+        cell = tableCell;
     }
     return cell;
-}
-
-#pragma mark Standard Methods
-
-- (void) viewDidLoad {
-	[super viewDidLoad];
-	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:appDelegate action:@selector(doneEditingItem)] autorelease];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(doneEditingItem)] autorelease];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -87,6 +88,7 @@
 
 - (void)dealloc {
     [super dealloc];
+	[tableView dealloc];
 }
 
 

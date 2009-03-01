@@ -28,6 +28,10 @@
 	[currentGroceryList addObject:newItem];
 }
 
+- (void) addItemToQuickList:(QuickListItem *)newItem {
+	[quickAddList addObject:newItem];
+}
+
 - (void) addItemsToList:(NSArray *)newItems {
 	[currentGroceryList addObjectsFromArray:newItems];
 }
