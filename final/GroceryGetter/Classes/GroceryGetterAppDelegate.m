@@ -39,6 +39,10 @@
 	[currentGroceryList removeObjectAtIndex:index];
 }
 
+- (void) deleteQuickListItemAtIndex:(NSInteger)index {
+	[quickAddList removeObjectAtIndex:index];
+}
+
 - (void) setUpData {
 	self.currentGroceryList = [NSMutableArray arrayWithObjects:[[GroceryListItem alloc] initWithTitle:@"Foo"], [[GroceryListItem alloc] initWithTitle:@"Bar"], nil];
 	self.quickAddList = [NSMutableArray arrayWithObjects:[[QuickListItem alloc] initWithTitle:@"Milk"], [[QuickListItem alloc] initWithTitle:@"Water"], nil];

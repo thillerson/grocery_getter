@@ -20,6 +20,10 @@
 	[appDelegate doneEditingItem];
 }
 
+- (void) addQuickListItem {
+	
+}
+
 - (IBAction) editButtonPressed:(id)sender {
 	if (self.editing) {
 		[self setEditing:NO animated:YES];
@@ -34,10 +38,10 @@
 	[super setEditing:editing animated:animated];
 	[tableView setEditing:editing animated:animated];
 	if(editing) {
-		self.navigationItem.rightBarButtonItem.enabled = NO;
+		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addQuickListItem)] autorelease];
 		[editButton setTitle:@"Done Editing"];
 	} else {
-		self.navigationItem.rightBarButtonItem.enabled = YES;
+		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneChoosingItems)] autorelease];
 		[editButton setTitle:@"Edit Quick List"];
 	}
 }
@@ -83,6 +87,13 @@
 	cell.accessoryType = UITableViewCellAccessoryNone;
     cell.text = item.title;
     return cell;
+}
+
+- (void) tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (editingStyle == UITableViewCellEditingStyleDelete) {
+		[appDelegate deleteQuickListItemAtIndex:indexPath.row];
+		[tv reloadData];
+	}
 }
 
 #pragma mark Standard Methods

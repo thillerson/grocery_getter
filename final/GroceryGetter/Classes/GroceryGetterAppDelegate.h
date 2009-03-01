@@ -35,6 +35,7 @@
 - (void) addItemsToList:(NSArray *)newItems;
 - (void) updateItem:(GroceryListItem *)item atIndex:(NSInteger)index;
 - (void) deleteItemAtIndex:(NSInteger)index;
+- (void) deleteQuickListItemAtIndex:(NSInteger)index;
 
 - (void) showAddItemView;
 - (void) showEditItemViewForItem:(GroceryListItem *)item;
