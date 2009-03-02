@@ -16,7 +16,9 @@
 }
 
 - (IBAction) sortCompletedSettingChanged:(id)sender {
-	
+	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+	[settings setBool:sortCompletedSwitch.on forKey:@"shouldSortAfterComplete"];
+	[NSUserDefaults resetStandardUserDefaults];
 }
 
 #pragma mark Table Data Source Methods
@@ -37,13 +39,10 @@
 
 #pragma mark Standard Methods
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+	sortCompletedSwitch.on = [settings boolForKey:@"shouldSortAfterComplete"];
 }
-*/
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
