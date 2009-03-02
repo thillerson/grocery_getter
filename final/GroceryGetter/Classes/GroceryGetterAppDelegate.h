@@ -40,6 +40,7 @@
 - (void) addItemsToList:(NSArray *)newItems;
 - (void) deleteItemAtIndex:(NSInteger)index;
 - (void) groceryListOrderDidChange;
+- (void) reloadGroceryList;
 - (void) deleteQuickListItemAtIndex:(NSInteger)index;
 - (void) addItemToQuickList:(NSString *)title;
 - (void) quickListOrderDidChange;

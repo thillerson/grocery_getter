@@ -48,6 +48,10 @@
 	}
 }
 
+- (void) reloadGroceryList {
+	self.currentGroceryList = (NSMutableArray *)[GroceryListItem findAllGroceryListItemsInOrderInDatabase:db];
+}
+
 - (void) addItemToQuickList:(NSString *)title {
 	QuickListItem *newItem = [[QuickListItem alloc] initWithDatabase:db];
 	newItem.title = title;
@@ -91,7 +95,7 @@
     }
 }
 
-- (void) setUpData {
+- (void) loadData {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"groceries.db"];
@@ -185,7 +189,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     [self createEditableCopyOfDatabaseIfNeeded];
-	[self setUpData];
+	[self loadData];
 	navigationController.viewControllers = [NSArray arrayWithObject:groceryListController];
     
     [window insertSubview:navigationController.view belowSubview:toolbar];

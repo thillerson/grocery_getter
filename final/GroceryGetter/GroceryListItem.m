@@ -37,11 +37,9 @@ static sqlite3_stmt *delete_statement = nil;
 }
 
 + (NSArray *) findAllGroceryListItemsInOrderInDatabase:(sqlite3 *)db {
-	if (find_all_statement == nil) {
-		const char *sql = "SELECT pk, title, complete, position FROM groceries ORDER BY position";
-		if (sqlite3_prepare_v2(db, sql, -1, &find_all_statement, NULL) != SQLITE_OK) {
-			NSAssert1(0, @"Failed to prepare find all list select statement: '%s'.", sqlite3_errmsg(db));
-		}
+	const char *sql = "SELECT pk, title, complete, position FROM groceries ORDER BY complete, position";
+	if (sqlite3_prepare_v2(db, sql, -1, &find_all_statement, NULL) != SQLITE_OK) {
+		NSAssert1(0, @"Failed to prepare find all list select statement: '%s'.", sqlite3_errmsg(db));
 	}
 	NSMutableArray *list= [NSMutableArray array];
 	while (sqlite3_step(find_all_statement) == SQLITE_ROW) {

@@ -15,9 +15,10 @@
 	[appDelegate settingsViewDone];
 }
 
-- (IBAction) sortCompletedSettingChanged:(id)sender {
+- (IBAction)sortCompletedSettingChanged:(id)sender {
 	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
-	[settings setBool:sortCompletedSwitch.on forKey:@"shouldSortAfterComplete"];
+	BOOL on = sortCompletedSwitch.on;
+	[settings setBool:on forKey:@"shouldSortAfterComplete"];
 	[NSUserDefaults resetStandardUserDefaults];
 }
 
@@ -41,7 +42,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
-	sortCompletedSwitch.on = [settings boolForKey:@"shouldSortAfterComplete"];
+	BOOL on = [settings boolForKey:@"shouldSortAfterComplete"];
+	sortCompletedSwitch.on = on;
 }
 
 - (void)didReceiveMemoryWarning {

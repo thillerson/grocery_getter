@@ -48,6 +48,10 @@
 		GroceryListItem *item = [appDelegate.currentGroceryList objectAtIndex:indexPath.row];
 		[item toggleComplete];
 		[self checkCell:cell checked:item.complete];
+		if (sortAfterComplete) {
+			[appDelegate reloadGroceryList];
+			[tableView reloadData];
+		}
 	}
 }
 
@@ -86,6 +90,9 @@
 #pragma mark Standard Methods
 
 - (void)viewWillAppear:(BOOL)animated {
+	// reload the "should sort on complete setting"
+	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+	sortAfterComplete = [settings boolForKey:@"shouldSortAfterComplete"];
 	[tableView reloadData];
 }
 

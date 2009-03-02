@@ -11,6 +11,7 @@
 @class GroceryGetterAppDelegate;
 
 @interface GroceryListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+	BOOL sortAfterComplete;
 	IBOutlet GroceryGetterAppDelegate *appDelegate;
 	IBOutlet UITableView *tableView;
 }
