@@ -22,7 +22,20 @@
 	} else {
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
-}	
+}
+
+- (NSMutableArray *) groceryListForSection:(NSInteger)section {
+	if (sortAfterComplete) {
+		if (0 == section) {
+			return appDelegate.incompleteGroceryList;
+		} else {
+			return appDelegate.completeGroceryList;
+		}
+	} else {
+		return appDelegate.fullGroceryList;
+	}
+	
+}
 
 #pragma mark Editing Methods
 
@@ -41,11 +54,12 @@
 - (void)tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	if (self.editing) {
-		[appDelegate showEditItemViewForItem:[appDelegate.currentGroceryList objectAtIndex:indexPath.row]];
+		[appDelegate showEditItemViewForItem:[appDelegate.fullGroceryList objectAtIndex:indexPath.row]];
 	} else {
 		// toggle checked value of item at index path
+		NSArray *list = [self groceryListForSection:indexPath.section];
 		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-		GroceryListItem *item = [appDelegate.currentGroceryList objectAtIndex:indexPath.row];
+		GroceryListItem *item = [list objectAtIndex:indexPath.row];
 		[item toggleComplete];
 		[self checkCell:cell checked:item.complete];
 		if (sortAfterComplete) {
@@ -56,14 +70,42 @@
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-	[appDelegate.currentGroceryList exchangeObjectAtIndex:destinationIndexPath.row withObjectAtIndex:sourceIndexPath.row];
+	[appDelegate.fullGroceryList exchangeObjectAtIndex:destinationIndexPath.row withObjectAtIndex:sourceIndexPath.row];
 	[appDelegate groceryListOrderDidChange];
 }
 
 #pragma mark Table Data Source Methods
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	if (sortAfterComplete) {
+		return 2;
+	} else {
+		return 1;
+	}
+}
+
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
-	return [appDelegate.currentGroceryList count];
+	if (sortAfterComplete) {
+		if (0 == section) {
+			return [appDelegate.incompleteGroceryList count];
+		} else {
+			return [appDelegate.completeGroceryList count];
+		}
+	} else {
+		return [appDelegate.fullGroceryList count];
+	}
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	if (sortAfterComplete) {
+		if (0 == section) {
+			return @"Incomplete";
+		} else {
+			return @"Complete";
+		}
+	} else {
+		return nil;
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -72,7 +114,8 @@
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"groceryListItem"] autorelease];
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
-	GroceryListItem *itemAtIndex = [appDelegate.currentGroceryList objectAtIndex:indexPath.row];
+	NSArray *list = [self groceryListForSection:indexPath.section];
+	GroceryListItem *itemAtIndex = [list objectAtIndex:indexPath.row];
     cell.text = itemAtIndex.title;
 	[self checkCell:cell checked:itemAtIndex.complete];
     return cell;
@@ -80,9 +123,10 @@
 
 - (void) tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (editingStyle == UITableViewCellEditingStyleDelete) {
-		GroceryListItem *item = [appDelegate.currentGroceryList objectAtIndex:indexPath.row];
+		NSMutableArray *list = [self groceryListForSection:indexPath.section];
+		GroceryListItem *item = [list objectAtIndex:indexPath.row];
 		item.destroy;
-		[appDelegate deleteItemAtIndex:indexPath.row];
+		[list removeObjectAtIndex:indexPath.row];
 		[tv reloadData];
 	}
 }
@@ -93,6 +137,7 @@
 	// reload the "should sort on complete setting"
 	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
 	sortAfterComplete = [settings boolForKey:@"shouldSortAfterComplete"];
+	[appDelegate reloadGroceryList];
 	[tableView reloadData];
 }
 

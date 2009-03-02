@@ -55,6 +55,44 @@ static sqlite3_stmt *delete_statement = nil;
 	return list;
 }
 
++ (NSArray *) findAllCompleteGroceryListItemsInOrderInDatabase:(sqlite3 *)db {
+	const char *sql = "SELECT pk, title, complete, position FROM groceries WHERE complete = 1 ORDER BY position";
+	if (sqlite3_prepare_v2(db, sql, -1, &find_all_statement, NULL) != SQLITE_OK) {
+		NSAssert1(0, @"Failed to prepare find all list select statement: '%s'.", sqlite3_errmsg(db));
+	}
+	NSMutableArray *list= [NSMutableArray array];
+	while (sqlite3_step(find_all_statement) == SQLITE_ROW) {
+		GroceryListItem *item = [[GroceryListItem alloc] initWithDatabase:db];
+		item.pk = sqlite3_column_int(find_all_statement, 0);
+		item.title = [NSString stringWithUTF8String:(char *)sqlite3_column_text(find_all_statement, 1)];
+		int complete = sqlite3_column_int(find_all_statement, 2);
+		item.complete = [[NSNumber numberWithInt:complete] boolValue];
+		item.position = sqlite3_column_int(find_all_statement, 3);
+		[list addObject:item];
+		[item release];
+	}
+	return list;
+}
+
++ (NSArray *) findAllIncompleteGroceryListItemsInOrderInDatabase:(sqlite3 *)db {
+	const char *sql = "SELECT pk, title, complete, position FROM groceries WHERE complete = 0 ORDER BY position";
+	if (sqlite3_prepare_v2(db, sql, -1, &find_all_statement, NULL) != SQLITE_OK) {
+		NSAssert1(0, @"Failed to prepare find all list select statement: '%s'.", sqlite3_errmsg(db));
+	}
+	NSMutableArray *list= [NSMutableArray array];
+	while (sqlite3_step(find_all_statement) == SQLITE_ROW) {
+		GroceryListItem *item = [[GroceryListItem alloc] initWithDatabase:db];
+		item.pk = sqlite3_column_int(find_all_statement, 0);
+		item.title = [NSString stringWithUTF8String:(char *)sqlite3_column_text(find_all_statement, 1)];
+		int complete = sqlite3_column_int(find_all_statement, 2);
+		item.complete = [[NSNumber numberWithInt:complete] boolValue];
+		item.position = sqlite3_column_int(find_all_statement, 3);
+		[list addObject:item];
+		[item release];
+	}
+	return list;
+}
+
 #pragma mark Instance Methods
 
 - (id) initWithDatabase:(sqlite3 *)db {

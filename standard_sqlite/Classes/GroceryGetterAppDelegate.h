@@ -18,7 +18,9 @@
 
 @interface GroceryGetterAppDelegate : NSObject <UIApplicationDelegate> {
 	sqlite3 *db;
-	NSMutableArray *currentGroceryList;
+	NSMutableArray *fullGroceryList;
+	NSMutableArray *incompleteGroceryList;
+	NSMutableArray *completeGroceryList;
 	NSMutableArray *quickAddList;
     UIWindow *window;
 	UINavigationController *navigationController;
@@ -33,7 +35,9 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet GroceryListViewController *groceryListController;
 @property (nonatomic, retain) IBOutlet AddGroceryListItemViewController *addListItemController;
-@property (nonatomic, retain) NSMutableArray *currentGroceryList;
+@property (nonatomic, retain) NSMutableArray *fullGroceryList;
+@property (nonatomic, retain) NSMutableArray *incompleteGroceryList;
+@property (nonatomic, retain) NSMutableArray *completeGroceryList;
 @property (nonatomic, retain) NSMutableArray *quickAddList;
 
 - (void) addItemToList:(NSString *)title;

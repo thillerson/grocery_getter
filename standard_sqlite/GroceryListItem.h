@@ -26,6 +26,8 @@
 
 + (void) deletePreparedStatements;
 + (NSArray *) findAllGroceryListItemsInOrderInDatabase:(sqlite3 *)db;
++ (NSArray *) findAllCompleteGroceryListItemsInOrderInDatabase:(sqlite3 *)db;
++ (NSArray *) findAllIncompleteGroceryListItemsInOrderInDatabase:(sqlite3 *)db;
 
 - (id) initWithDatabase:(sqlite3 *)db;
 - (id) createWithTitle:(NSString *)t withDatabase:(sqlite3 *)db;

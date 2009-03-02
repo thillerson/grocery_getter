@@ -16,40 +16,42 @@
 
 @implementation GroceryGetterAppDelegate
 
-@synthesize window, navigationController, groceryListController, addListItemController, currentGroceryList, quickAddList;
+@synthesize window, navigationController, groceryListController, addListItemController, fullGroceryList, incompleteGroceryList, completeGroceryList, quickAddList;
 
 #pragma mark List Item API
 
 - (void) addItemToList:(NSString *)title {
 	GroceryListItem *newItem = [[GroceryListItem alloc] initWithDatabase:db];
 	newItem.title = title;
-	newItem.position = [currentGroceryList count] - 1;
+	newItem.position = [fullGroceryList count] - 1;
 	newItem.create;
-	[currentGroceryList addObject:newItem];
+	[fullGroceryList addObject:newItem];
 	[newItem release];
 }
 
 - (void) addItemsToList:(NSArray *)newItems {
-	[currentGroceryList addObjectsFromArray:newItems];
+	[fullGroceryList addObjectsFromArray:newItems];
 }
 
 - (void) deleteItemAtIndex:(NSInteger)index {
-	GroceryListItem *item = (GroceryListItem *)[currentGroceryList objectAtIndex:index];
+	GroceryListItem *item = (GroceryListItem *)[fullGroceryList objectAtIndex:index];
 	item.destroy;
-	[currentGroceryList removeObjectAtIndex:index];
+	[fullGroceryList removeObjectAtIndex:index];
 }
 
 - (void) groceryListOrderDidChange {
 	GroceryListItem *item;
-	for (int i=0; i<[currentGroceryList count]; i++) {
-		item = [currentGroceryList objectAtIndex:i];
+	for (int i=0; i<[fullGroceryList count]; i++) {
+		item = [fullGroceryList objectAtIndex:i];
 		item.position = i;
 		item.save;
 	}
 }
 
 - (void) reloadGroceryList {
-	self.currentGroceryList = (NSMutableArray *)[GroceryListItem findAllGroceryListItemsInOrderInDatabase:db];
+	self.fullGroceryList = (NSMutableArray *)[GroceryListItem findAllGroceryListItemsInOrderInDatabase:db];
+	self.completeGroceryList = (NSMutableArray *)[GroceryListItem findAllCompleteGroceryListItemsInOrderInDatabase:db];
+	self.incompleteGroceryList = (NSMutableArray *)[GroceryListItem findAllIncompleteGroceryListItemsInOrderInDatabase:db];
 }
 
 - (void) addItemToQuickList:(NSString *)title {
@@ -101,7 +103,7 @@
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"groceries.db"];
     if (sqlite3_open([path UTF8String], &db) == SQLITE_OK) {
 		self.quickAddList = (NSMutableArray *)[QuickListItem findAllQuickListItemsInOrderInDatabase:db];
-		self.currentGroceryList = (NSMutableArray *)[GroceryListItem findAllGroceryListItemsInOrderInDatabase:db];
+		[self reloadGroceryList];
 	} else {
         sqlite3_close(db);
         NSAssert1(0, @"Failed to open database: '%s'.", sqlite3_errmsg(db));
