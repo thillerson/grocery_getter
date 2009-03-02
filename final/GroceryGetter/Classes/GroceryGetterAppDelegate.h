@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 
 @class GroceryListViewController;
 @class AddGroceryListItemViewController;
@@ -16,6 +17,7 @@
 @class SettingsViewController;
 
 @interface GroceryGetterAppDelegate : NSObject <UIApplicationDelegate> {
+	sqlite3 *db;
 	NSMutableArray *currentGroceryList;
 	NSMutableArray *quickAddList;
     UIWindow *window;
@@ -36,7 +38,8 @@
 
 - (void) addItemToList:(GroceryListItem *)newItem;
 - (void) addItemsToList:(NSArray *)newItems;
-- (void) addItemToQuickList:(QuickListItem *)newItem;
+- (void) addItemToQuickList:(NSString *)title;
+- (void) quickListOrderDidChange;
 - (void) updateItem:(GroceryListItem *)item atIndex:(NSInteger)index;
 - (void) deleteItemAtIndex:(NSInteger)index;
 - (void) deleteQuickListItemAtIndex:(NSInteger)index;

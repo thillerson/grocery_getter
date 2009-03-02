@@ -8,10 +8,9 @@
 
 #import "GroceryListItem.h"
 
-
 @implementation GroceryListItem
 
-@synthesize listItemId, title, complete, position;
+@synthesize pk, title, complete, position;
 
 - (GroceryListItem *) initWithTitle:(NSString *)t {
 	if (self = [super init]) {

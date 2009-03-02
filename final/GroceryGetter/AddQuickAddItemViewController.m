@@ -18,8 +18,9 @@
 	if ([textField.text length] > 0) {
 		if (nil != itemToEdit) {
 			itemToEdit.title = textField.text;
+			itemToEdit.save;
 		} else {
-			[appDelegate addItemToQuickList:[[QuickListItem alloc] initWithTitle:textField.text]];
+			[appDelegate addItemToQuickList:textField.text];
 		}
 	}
 }

@@ -69,8 +69,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-	QuickListItem *item = [appDelegate.quickAddList objectAtIndex:sourceIndexPath.row];
-	item.position = destinationIndexPath.row;
+	[appDelegate.quickAddList exchangeObjectAtIndex:destinationIndexPath.row withObjectAtIndex:sourceIndexPath.row];
+	[appDelegate quickListOrderDidChange];
 }
 
 #pragma mark Table Data Source Methods

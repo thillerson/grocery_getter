@@ -10,13 +10,13 @@
 
 
 @interface GroceryListItem : NSObject {
-	NSInteger listItemId;
+	NSInteger pk;
 	NSString *title;
 	BOOL complete;
 	NSInteger position;
 }
 
-@property (assign, nonatomic, readonly) NSInteger listItemId;
+@property (assign, nonatomic, readonly) NSInteger pk;
 @property (copy, nonatomic) NSString *title;
 @property (assign, nonatomic) NSInteger position;
 @property (assign, nonatomic) BOOL complete;
