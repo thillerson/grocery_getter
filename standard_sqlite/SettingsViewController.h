@@ -18,7 +18,6 @@
 }
 
 - (IBAction) done:(id)sender;
-- (IBAction) sortCompletedSettingChanged:(id)sender;
 
 
 @end

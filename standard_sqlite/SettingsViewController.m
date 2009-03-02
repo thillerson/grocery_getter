@@ -15,7 +15,7 @@
 	[appDelegate settingsViewDone];
 }
 
-- (IBAction)sortCompletedSettingChanged:(id)sender {
+- (void)sortCompletedSettingChanged {
 	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
 	BOOL on = sortCompletedSwitch.on;
 	[settings setBool:on forKey:@"shouldSortAfterComplete"];
@@ -44,6 +44,8 @@
 	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
 	BOOL on = [settings boolForKey:@"shouldSortAfterComplete"];
 	sortCompletedSwitch.on = on;
+	// having trouble with the switch losing its selector. reset it every time here
+	[sortCompletedSwitch addTarget:self action:@selector(sortCompletedSettingChanged) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning {
