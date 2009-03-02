@@ -36,13 +36,13 @@
 @property (nonatomic, retain) NSMutableArray *currentGroceryList;
 @property (nonatomic, retain) NSMutableArray *quickAddList;
 
-- (void) addItemToList:(GroceryListItem *)newItem;
+- (void) addItemToList:(NSString *)title;
 - (void) addItemsToList:(NSArray *)newItems;
+- (void) deleteItemAtIndex:(NSInteger)index;
+- (void) groceryListOrderDidChange;
+- (void) deleteQuickListItemAtIndex:(NSInteger)index;
 - (void) addItemToQuickList:(NSString *)title;
 - (void) quickListOrderDidChange;
-- (void) updateItem:(GroceryListItem *)item atIndex:(NSInteger)index;
-- (void) deleteItemAtIndex:(NSInteger)index;
-- (void) deleteQuickListItemAtIndex:(NSInteger)index;
 
 - (void) settingsViewDone;
 - (void) showAddItemView;

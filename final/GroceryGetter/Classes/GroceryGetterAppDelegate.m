@@ -20,25 +20,29 @@
 
 #pragma mark List Item API
 
-- (void) addItemToList:(GroceryListItem *)newItem {
+- (void) addItemToList:(NSString *)title {
+	GroceryListItem *newItem = [[GroceryListItem alloc] initWithDatabase:db];
+	newItem.title = title;
+	newItem.position = [currentGroceryList count] - 1;
+	newItem.create;
 	[currentGroceryList addObject:newItem];
+	[newItem release];
 }
 
 - (void) addItemsToList:(NSArray *)newItems {
 	[currentGroceryList addObjectsFromArray:newItems];
 }
 
-- (void) updateItem:(GroceryListItem *)item atIndex:(NSInteger)index {
-}
-
 - (void) deleteItemAtIndex:(NSInteger)index {
+	GroceryListItem *item = (GroceryListItem *)[currentGroceryList objectAtIndex:index];
+	item.destroy;
 	[currentGroceryList removeObjectAtIndex:index];
 }
 
-- (void) quickListOrderDidChange {
-	QuickListItem *item;
-	for (int i=0; i<[quickAddList count]; i++) {
-		item = [quickAddList objectAtIndex:i];
+- (void) groceryListOrderDidChange {
+	GroceryListItem *item;
+	for (int i=0; i<[currentGroceryList count]; i++) {
+		item = [currentGroceryList objectAtIndex:i];
 		item.position = i;
 		item.save;
 	}
@@ -57,6 +61,15 @@
 	QuickListItem *item = (QuickListItem *)[quickAddList objectAtIndex:index];
 	item.destroy;
 	[quickAddList removeObjectAtIndex:index];
+}
+
+- (void) quickListOrderDidChange {
+	QuickListItem *item;
+	for (int i=0; i<[quickAddList count]; i++) {
+		item = [quickAddList objectAtIndex:i];
+		item.position = i;
+		item.save;
+	}
 }
 
 #pragma mark Database Methods
@@ -84,11 +97,11 @@
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"groceries.db"];
     if (sqlite3_open([path UTF8String], &db) == SQLITE_OK) {
 		self.quickAddList = (NSMutableArray *)[QuickListItem findAllQuickListItemsInOrderInDatabase:db];
+		self.currentGroceryList = (NSMutableArray *)[GroceryListItem findAllGroceryListItemsInOrderInDatabase:db];
 	} else {
         sqlite3_close(db);
         NSAssert1(0, @"Failed to open database: '%s'.", sqlite3_errmsg(db));
 	}
-	self.currentGroceryList = [NSMutableArray arrayWithObjects:[[GroceryListItem alloc] initWithTitle:@"Foo"], [[GroceryListItem alloc] initWithTitle:@"Bar"], nil];
 }
 
 #pragma mark Navigation Actions
@@ -167,6 +180,7 @@
 - (void) settingsViewDone {
 	[self toggleSettingsView];
 }
+
 #pragma mark Standard Methods
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
@@ -181,6 +195,7 @@
 
 - (void)dealloc {
 	[QuickListItem deletePreparedStatements];
+	[GroceryListItem deletePreparedStatements];
 	[toolbar release];
 	[navigationController release];
     [groceryListController release];

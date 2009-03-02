@@ -18,8 +18,9 @@
 	if ([textField.text length] > 0) {
 		if (nil != itemToEdit) {
 			itemToEdit.title = textField.text;
+			[itemToEdit save];
 		} else {
-			[appDelegate addItemToList:[[GroceryListItem alloc] initWithTitle:textField.text]];
+			[appDelegate addItemToList:textField.text];
 		}
 	}
 }

@@ -149,4 +149,5 @@ static sqlite3_stmt *delete_statement = nil;
     dirty = YES;
 	position = newPosition;
 }
+
 @end

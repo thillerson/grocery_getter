@@ -10,11 +10,11 @@
 #import <sqlite3.h>
 
 @interface QuickListItem : NSObject {
+    // The object keeps track of the database it came from.
+    sqlite3 *database;
 	NSInteger pk;
 	NSString *title;
 	NSInteger position;
-    // The object keeps track of the database it came from.
-    sqlite3 *database;
     BOOL dirty;
     NSData *data;
 }

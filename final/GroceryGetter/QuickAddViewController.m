@@ -16,7 +16,7 @@
 
 - (void) doneChoosingItems {
 	for (NSString *title in [chosenItemTitles allKeys]) {
-		[appDelegate addItemToList:[[GroceryListItem alloc] initWithTitle:title]];
+		[appDelegate addItemToList:title];
 	}
 	[appDelegate doneEditingItem];
 }

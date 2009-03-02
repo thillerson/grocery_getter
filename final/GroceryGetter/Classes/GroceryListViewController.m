@@ -52,8 +52,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-	GroceryListItem *item = [appDelegate.currentGroceryList objectAtIndex:sourceIndexPath.row];
-	item.position = destinationIndexPath.row;
+	[appDelegate.currentGroceryList exchangeObjectAtIndex:destinationIndexPath.row withObjectAtIndex:sourceIndexPath.row];
+	[appDelegate groceryListOrderDidChange];
 }
 
 #pragma mark Table Data Source Methods
@@ -76,6 +76,8 @@
 
 - (void) tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (editingStyle == UITableViewCellEditingStyleDelete) {
+		GroceryListItem *item = [appDelegate.currentGroceryList objectAtIndex:indexPath.row];
+		item.destroy;
 		[appDelegate deleteItemAtIndex:indexPath.row];
 		[tv reloadData];
 	}
