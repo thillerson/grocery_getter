@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* GroceryGetterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* GroceryGetterAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* GroceryGetterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* GroceryGetterViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* GroceryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* GroceryListViewController.m */; };
+		EAAF74DA0F53599200857BBC /* GroceryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAF74D90F53599200857BBC /* GroceryListItem.m */; };
+		EABB18690F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB18680F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m */; };
+		EABB186C0F5A108600BF2C75 /* AddQuickAddItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */; };
+		EABB191E0F5A1BE600BF2C75 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EABB191D0F5A1BE600BF2C75 /* SettingsView.xib */; };
+		EABB19290F5A1D5600BF2C75 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB19280F5A1D5600BF2C75 /* SettingsViewController.m */; };
+		EABB19D50F5AF1C300BF2C75 /* create_scripts.sql in Resources */ = {isa = PBXBuildFile; fileRef = EABB19D40F5AF1C300BF2C75 /* create_scripts.sql */; };
+		EABB1A0F0F5AFAFD00BF2C75 /* groceries.db in Resources */ = {isa = PBXBuildFile; fileRef = EABB1A0E0F5AFAFD00BF2C75 /* groceries.db */; };
+		EABB1C3D0F5B7E7200BF2C75 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EABB1C3C0F5B7E7200BF2C75 /* Settings.bundle */; };
+		EAF54BC60F58931C00DBBFBC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */; };
+		EAF54BCA0F58942D00DBBFBC /* QuickAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF54BC90F58942D00DBBFBC /* QuickAddViewController.m */; };
+		EAF54BCC0F58946500DBBFBC /* QuickAddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF54BCB0F58946500DBBFBC /* QuickAddView.xib */; };
+		EAF747840F58FA7600967CF4 /* QuickListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF747830F58FA7600967CF4 /* QuickListItem.m */; };
+		EAF748AB0F512689007BBAF9 /* AddGroceryListItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF748AA0F512689007BBAF9 /* AddGroceryListItemViewController.m */; };
+		EAF748CB0F512746007BBAF9 /* AddGroceryListItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAF748CA0F512746007BBAF9 /* AddGroceryListItemView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* GroceryGetterAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryGetterAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* GroceryGetterAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryGetterAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* GroceryGetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryGetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* GroceryGetterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroceryGetterViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* GroceryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroceryListViewController.h; path = Classes/GroceryListViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* GroceryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroceryListViewController.m; path = Classes/GroceryListViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* GroceryGetter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryGetter_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAAF74D80F53599200857BBC /* GroceryListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryListItem.h; sourceTree = "<group>"; };
+		EAAF74D90F53599200857BBC /* GroceryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryListItem.m; sourceTree = "<group>"; };
+		EABB18670F5A0F5C00BF2C75 /* AddQuickAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuickAddItemViewController.h; sourceTree = "<group>"; };
+		EABB18680F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddQuickAddItemViewController.m; sourceTree = "<group>"; };
+		EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddQuickAddItemView.xib; sourceTree = "<group>"; };
+		EABB191D0F5A1BE600BF2C75 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		EABB19270F5A1D5600BF2C75 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		EABB19280F5A1D5600BF2C75 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		EABB19D40F5AF1C300BF2C75 /* create_scripts.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = create_scripts.sql; sourceTree = "<group>"; };
+		EABB1A0E0F5AFAFD00BF2C75 /* groceries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = groceries.db; sourceTree = "<group>"; };
+		EABB1C3C0F5B7E7200BF2C75 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		EAF54BC80F58942D00DBBFBC /* QuickAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickAddViewController.h; sourceTree = "<group>"; };
+		EAF54BC90F58942D00DBBFBC /* QuickAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickAddViewController.m; sourceTree = "<group>"; };
+		EAF54BCB0F58946500DBBFBC /* QuickAddView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickAddView.xib; sourceTree = "<group>"; };
+		EAF747820F58FA7600967CF4 /* QuickListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickListItem.h; sourceTree = "<group>"; };
+		EAF747830F58FA7600967CF4 /* QuickListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickListItem.m; sourceTree = "<group>"; };
+		EAF748A90F512689007BBAF9 /* AddGroceryListItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddGroceryListItemViewController.h; path = Classes/AddGroceryListItemViewController.h; sourceTree = "<group>"; };
+		EAF748AA0F512689007BBAF9 /* AddGroceryListItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddGroceryListItemViewController.m; path = Classes/AddGroceryListItemViewController.m; sourceTree = "<group>"; };
+		EAF748CA0F512746007BBAF9 /* AddGroceryListItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddGroceryListItemView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				EAF54BC60F58931C00DBBFBC /* libsqlite3.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* GroceryGetterAppDelegate.h */,
+				1D3623250D0F684500981E51 /* GroceryGetterAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* GroceryGetter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				EABB19260F5A1D4100BF2C75 /* Settings View Controllers */,
+				EAAF74BE0F5357DB00857BBC /* Model */,
+				EAF748AC0F5126DC007BBAF9 /* Main View Controllers */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* GroceryGetter_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EABB1A0E0F5AFAFD00BF2C75 /* groceries.db */,
+				EABB19D40F5AF1C300BF2C75 /* create_scripts.sql */,
+				2899E5210DE3E06400AC0155 /* GroceryGetterViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				EAF748CA0F512746007BBAF9 /* AddGroceryListItemView.xib */,
+				EAF54BCB0F58946500DBBFBC /* QuickAddView.xib */,
+				EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */,
+				EABB191D0F5A1BE600BF2C75 /* SettingsView.xib */,
+				EABB1C3C0F5B7E7200BF2C75 /* Settings.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAAF74BE0F5357DB00857BBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAAF74D80F53599200857BBC /* GroceryListItem.h */,
+				EAAF74D90F53599200857BBC /* GroceryListItem.m */,
+				EAF747820F58FA7600967CF4 /* QuickListItem.h */,
+				EAF747830F58FA7600967CF4 /* QuickListItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EABB19260F5A1D4100BF2C75 /* Settings View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EABB19270F5A1D5600BF2C75 /* SettingsViewController.h */,
+				EABB19280F5A1D5600BF2C75 /* SettingsViewController.m */,
+			);
+			name = "Settings View Controllers";
+			sourceTree = "<group>";
+		};
+		EAF748AC0F5126DC007BBAF9 /* Main View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28D7ACF60DDB3853001CB0EB /* GroceryListViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* GroceryListViewController.m */,
+				EAF748A90F512689007BBAF9 /* AddGroceryListItemViewController.h */,
+				EAF748AA0F512689007BBAF9 /* AddGroceryListItemViewController.m */,
+				EAF54BC80F58942D00DBBFBC /* QuickAddViewController.h */,
+				EAF54BC90F58942D00DBBFBC /* QuickAddViewController.m */,
+				EABB18670F5A0F5C00BF2C75 /* AddQuickAddItemViewController.h */,
+				EABB18680F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m */,
+			);
+			name = "Main View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* GroceryGetter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GroceryGetter" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GroceryGetter;
+			productName = GroceryGetter;
+			productReference = 1D6058910D05DD3D006BFB54 /* GroceryGetter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GroceryGetter" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* GroceryGetter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* GroceryGetterViewController.xib in Resources */,
+				EAF748CB0F512746007BBAF9 /* AddGroceryListItemView.xib in Resources */,
+				EAF54BCC0F58946500DBBFBC /* QuickAddView.xib in Resources */,
+				EABB186C0F5A108600BF2C75 /* AddQuickAddItemView.xib in Resources */,
+				EABB191E0F5A1BE600BF2C75 /* SettingsView.xib in Resources */,
+				EABB19D50F5AF1C300BF2C75 /* create_scripts.sql in Resources */,
+				EABB1A0F0F5AFAFD00BF2C75 /* groceries.db in Resources */,
+				EABB1C3D0F5B7E7200BF2C75 /* Settings.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* GroceryGetterAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* GroceryListViewController.m in Sources */,
+				EAF748AB0F512689007BBAF9 /* AddGroceryListItemViewController.m in Sources */,
+				EAAF74DA0F53599200857BBC /* GroceryListItem.m in Sources */,
+				EAF54BCA0F58942D00DBBFBC /* QuickAddViewController.m in Sources */,
+				EAF747840F58FA7600967CF4 /* QuickListItem.m in Sources */,
+				EABB18690F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m in Sources */,
+				EABB19290F5A1D5600BF2C75 /* SettingsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GroceryGetter_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = GroceryGetter;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GroceryGetter_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = GroceryGetter;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GroceryGetter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GroceryGetter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
