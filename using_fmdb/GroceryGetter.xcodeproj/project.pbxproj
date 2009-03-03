@@ -21,13 +21,14 @@
 		EA0D582B0F5C8990002667B4 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D58250F5C8990002667B4 /* FMDatabase.m */; };
 		EA0D582C0F5C8990002667B4 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D58270F5C8990002667B4 /* FMDatabaseAdditions.m */; };
 		EA0D582E0F5C8990002667B4 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D582A0F5C8990002667B4 /* FMResultSet.m */; };
+		EA0D599E0F5D00FB002667B4 /* groceries.db in Resources */ = {isa = PBXBuildFile; fileRef = EA0D599D0F5D00FB002667B4 /* groceries.db */; };
+		EA0D59BF0F5D01A3002667B4 /* CreateGroceryList.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D59BE0F5D01A3002667B4 /* CreateGroceryList.m */; };
+		EA0D59FC0F5D057C002667B4 /* CreateQuickList.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D59FB0F5D057C002667B4 /* CreateQuickList.m */; };
 		EAAF74DA0F53599200857BBC /* GroceryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAF74D90F53599200857BBC /* GroceryListItem.m */; };
 		EABB18690F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB18680F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m */; };
 		EABB186C0F5A108600BF2C75 /* AddQuickAddItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */; };
 		EABB191E0F5A1BE600BF2C75 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EABB191D0F5A1BE600BF2C75 /* SettingsView.xib */; };
 		EABB19290F5A1D5600BF2C75 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB19280F5A1D5600BF2C75 /* SettingsViewController.m */; };
-		EABB19D50F5AF1C300BF2C75 /* create_scripts.sql in Resources */ = {isa = PBXBuildFile; fileRef = EABB19D40F5AF1C300BF2C75 /* create_scripts.sql */; };
-		EABB1A0F0F5AFAFD00BF2C75 /* groceries.db in Resources */ = {isa = PBXBuildFile; fileRef = EABB1A0E0F5AFAFD00BF2C75 /* groceries.db */; };
 		EABB1C3D0F5B7E7200BF2C75 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EABB1C3C0F5B7E7200BF2C75 /* Settings.bundle */; };
 		EAF54BC60F58931C00DBBFBC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */; };
 		EAF54BCA0F58942D00DBBFBC /* QuickAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF54BC90F58942D00DBBFBC /* QuickAddViewController.m */; };
@@ -63,6 +64,11 @@
 		EA0D58270F5C8990002667B4 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = Classes/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		EA0D58290F5C8990002667B4 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = Classes/fmdb/FMResultSet.h; sourceTree = "<group>"; };
 		EA0D582A0F5C8990002667B4 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = Classes/fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		EA0D599D0F5D00FB002667B4 /* groceries.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = groceries.db; sourceTree = "<group>"; };
+		EA0D59BD0F5D01A3002667B4 /* CreateGroceryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroceryList.h; sourceTree = "<group>"; };
+		EA0D59BE0F5D01A3002667B4 /* CreateGroceryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateGroceryList.m; sourceTree = "<group>"; };
+		EA0D59FA0F5D057C002667B4 /* CreateQuickList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateQuickList.h; sourceTree = "<group>"; };
+		EA0D59FB0F5D057C002667B4 /* CreateQuickList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateQuickList.m; sourceTree = "<group>"; };
 		EAAF74D80F53599200857BBC /* GroceryListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryListItem.h; sourceTree = "<group>"; };
 		EAAF74D90F53599200857BBC /* GroceryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryListItem.m; sourceTree = "<group>"; };
 		EABB18670F5A0F5C00BF2C75 /* AddQuickAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuickAddItemViewController.h; sourceTree = "<group>"; };
@@ -71,8 +77,6 @@
 		EABB191D0F5A1BE600BF2C75 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		EABB19270F5A1D5600BF2C75 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		EABB19280F5A1D5600BF2C75 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		EABB19D40F5AF1C300BF2C75 /* create_scripts.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = create_scripts.sql; sourceTree = "<group>"; };
-		EABB1A0E0F5AFAFD00BF2C75 /* groceries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = groceries.db; sourceTree = "<group>"; };
 		EABB1C3C0F5B7E7200BF2C75 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		EAF54BC80F58942D00DBBFBC /* QuickAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickAddViewController.h; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EA0D59BB0F5D014D002667B4 /* Migrations */,
 				EA0D58040F5C8847002667B4 /* fmdb */,
 				EA0D58030F5C8834002667B4 /* FMDBMigrationManager */,
 				EABB19260F5A1D4100BF2C75 /* Settings View Controllers */,
@@ -146,8 +151,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EABB1A0E0F5AFAFD00BF2C75 /* groceries.db */,
-				EABB19D40F5AF1C300BF2C75 /* create_scripts.sql */,
+				EA0D599D0F5D00FB002667B4 /* groceries.db */,
 				2899E5210DE3E06400AC0155 /* GroceryGetterViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -195,6 +199,17 @@
 				EA0D582A0F5C8990002667B4 /* FMResultSet.m */,
 			);
 			name = fmdb;
+			sourceTree = "<group>";
+		};
+		EA0D59BB0F5D014D002667B4 /* Migrations */ = {
+			isa = PBXGroup;
+			children = (
+				EA0D59BD0F5D01A3002667B4 /* CreateGroceryList.h */,
+				EA0D59BE0F5D01A3002667B4 /* CreateGroceryList.m */,
+				EA0D59FA0F5D057C002667B4 /* CreateQuickList.h */,
+				EA0D59FB0F5D057C002667B4 /* CreateQuickList.m */,
+			);
+			name = Migrations;
 			sourceTree = "<group>";
 		};
 		EAAF74BE0F5357DB00857BBC /* Model */ = {
@@ -280,9 +295,8 @@
 				EAF54BCC0F58946500DBBFBC /* QuickAddView.xib in Resources */,
 				EABB186C0F5A108600BF2C75 /* AddQuickAddItemView.xib in Resources */,
 				EABB191E0F5A1BE600BF2C75 /* SettingsView.xib in Resources */,
-				EABB19D50F5AF1C300BF2C75 /* create_scripts.sql in Resources */,
-				EABB1A0F0F5AFAFD00BF2C75 /* groceries.db in Resources */,
 				EABB1C3D0F5B7E7200BF2C75 /* Settings.bundle in Resources */,
+				EA0D599E0F5D00FB002667B4 /* groceries.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +322,8 @@
 				EA0D582B0F5C8990002667B4 /* FMDatabase.m in Sources */,
 				EA0D582C0F5C8990002667B4 /* FMDatabaseAdditions.m in Sources */,
 				EA0D582E0F5C8990002667B4 /* FMResultSet.m in Sources */,
+				EA0D59BF0F5D01A3002667B4 /* CreateGroceryList.m in Sources */,
+				EA0D59FC0F5D057C002667B4 /* CreateQuickList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

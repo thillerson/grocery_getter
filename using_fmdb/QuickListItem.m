@@ -46,6 +46,16 @@
     return self;
 }
 
+- (id) initWithTitle:(NSString *)t withDatabase:(FMDatabase *)db {
+	if (self = [super init]) {
+		title = [t copy];
+		position = 0;
+		database = [db retain];
+		[self create];
+	}
+	return self;
+}
+
 - (void) create {
 	[database beginTransaction];
 	[database executeUpdate:@"INSERT INTO quick_list (title, position) VALUES(?, ?)",
@@ -73,16 +83,6 @@
         NSLog(@"Err %d: %@", [database lastErrorCode], [database lastErrorMessage]);
     }
 	dirty = NO;
-}
-
-- (id) initWithTitle:(NSString *)t withDatabase:(FMDatabase *)db {
-	if (self = [super init]) {
-		title = [t copy];
-		position = 0;
-		database = [db retain];
-		[self create];
-	}
-	return self;
 }
 
 - (void) destroy {

@@ -15,6 +15,9 @@
 #import "QuickListItem.h"
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
+#import "FmdbMigrationManager.h"
+#import "CreateGroceryList.h"
+#import "CreateQuickList.h"
 
 @implementation GroceryGetterAppDelegate
 
@@ -99,6 +102,17 @@
     if (!success) {
         NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
     }
+}
+
+- (void) migrate {
+	NSArray *migrations = [NSArray arrayWithObjects:
+						   [CreateGroceryList migration],
+						   [CreateQuickList migration],
+						   nil];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *dbPath = [documentsDirectory stringByAppendingPathComponent:@"groceries.db"];
+	[FmdbMigrationManager executeForDatabasePath:dbPath withMigrations:migrations];
 }
 
 - (void) initializeData {
@@ -205,6 +219,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     [self createEditableCopyOfDatabaseIfNeeded];
+	[self migrate];
 	[self initializeData];
 	navigationController.viewControllers = [NSArray arrayWithObject:groceryListController];
     
