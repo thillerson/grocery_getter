@@ -1,1 +1,6 @@
 Sample code to illustrate persistence for iPhone development
+
+The using_fmdb example uses code from http://code.google.com/p/flycode/ and http://github.com/mocra/fmdb-migration-manager/
+
+To build the using_ar example, download a zip from http://github.com/aptiva/activerecord/ and unpack to the using_ar directory as a directory named activerecord-read-only.
+
