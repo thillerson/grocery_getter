@@ -15,6 +15,12 @@
 		2899E5220DE3E06400AC0155 /* GroceryGetterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* GroceryGetterViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* GroceryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* GroceryListViewController.m */; };
+		EA0D580B0F5C8890002667B4 /* FmdbMigration.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D58060F5C8890002667B4 /* FmdbMigration.m */; };
+		EA0D580C0F5C8890002667B4 /* FmdbMigrationColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D58080F5C8890002667B4 /* FmdbMigrationColumn.m */; };
+		EA0D580D0F5C8890002667B4 /* FmdbMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D580A0F5C8890002667B4 /* FmdbMigrationManager.m */; };
+		EA0D582B0F5C8990002667B4 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D58250F5C8990002667B4 /* FMDatabase.m */; };
+		EA0D582C0F5C8990002667B4 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D58270F5C8990002667B4 /* FMDatabaseAdditions.m */; };
+		EA0D582E0F5C8990002667B4 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0D582A0F5C8990002667B4 /* FMResultSet.m */; };
 		EAAF74DA0F53599200857BBC /* GroceryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAF74D90F53599200857BBC /* GroceryListItem.m */; };
 		EABB18690F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB18680F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m */; };
 		EABB186C0F5A108600BF2C75 /* AddQuickAddItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */; };
@@ -45,6 +51,18 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* GroceryGetter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryGetter_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA0D58050F5C8890002667B4 /* FmdbMigration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FmdbMigration.h; path = Classes/FMDBMigrationManager/FmdbMigration.h; sourceTree = "<group>"; };
+		EA0D58060F5C8890002667B4 /* FmdbMigration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FmdbMigration.m; path = Classes/FMDBMigrationManager/FmdbMigration.m; sourceTree = "<group>"; };
+		EA0D58070F5C8890002667B4 /* FmdbMigrationColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FmdbMigrationColumn.h; path = Classes/FMDBMigrationManager/FmdbMigrationColumn.h; sourceTree = "<group>"; };
+		EA0D58080F5C8890002667B4 /* FmdbMigrationColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FmdbMigrationColumn.m; path = Classes/FMDBMigrationManager/FmdbMigrationColumn.m; sourceTree = "<group>"; };
+		EA0D58090F5C8890002667B4 /* FmdbMigrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FmdbMigrationManager.h; path = Classes/FMDBMigrationManager/FmdbMigrationManager.h; sourceTree = "<group>"; };
+		EA0D580A0F5C8890002667B4 /* FmdbMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FmdbMigrationManager.m; path = Classes/FMDBMigrationManager/FmdbMigrationManager.m; sourceTree = "<group>"; };
+		EA0D58240F5C8990002667B4 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = Classes/fmdb/FMDatabase.h; sourceTree = "<group>"; };
+		EA0D58250F5C8990002667B4 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = Classes/fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		EA0D58260F5C8990002667B4 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = Classes/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		EA0D58270F5C8990002667B4 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = Classes/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		EA0D58290F5C8990002667B4 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = Classes/fmdb/FMResultSet.h; sourceTree = "<group>"; };
+		EA0D582A0F5C8990002667B4 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = Classes/fmdb/FMResultSet.m; sourceTree = "<group>"; };
 		EAAF74D80F53599200857BBC /* GroceryListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryListItem.h; sourceTree = "<group>"; };
 		EAAF74D90F53599200857BBC /* GroceryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryListItem.m; sourceTree = "<group>"; };
 		EABB18670F5A0F5C00BF2C75 /* AddQuickAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuickAddItemViewController.h; sourceTree = "<group>"; };
@@ -102,6 +120,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EA0D58040F5C8847002667B4 /* fmdb */,
+				EA0D58030F5C8834002667B4 /* FMDBMigrationManager */,
 				EABB19260F5A1D4100BF2C75 /* Settings View Controllers */,
 				EAAF74BE0F5357DB00857BBC /* Model */,
 				EAF748AC0F5126DC007BBAF9 /* Main View Controllers */,
@@ -149,6 +169,32 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA0D58030F5C8834002667B4 /* FMDBMigrationManager */ = {
+			isa = PBXGroup;
+			children = (
+				EA0D58050F5C8890002667B4 /* FmdbMigration.h */,
+				EA0D58060F5C8890002667B4 /* FmdbMigration.m */,
+				EA0D58070F5C8890002667B4 /* FmdbMigrationColumn.h */,
+				EA0D58080F5C8890002667B4 /* FmdbMigrationColumn.m */,
+				EA0D58090F5C8890002667B4 /* FmdbMigrationManager.h */,
+				EA0D580A0F5C8890002667B4 /* FmdbMigrationManager.m */,
+			);
+			name = FMDBMigrationManager;
+			sourceTree = "<group>";
+		};
+		EA0D58040F5C8847002667B4 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				EA0D58240F5C8990002667B4 /* FMDatabase.h */,
+				EA0D58250F5C8990002667B4 /* FMDatabase.m */,
+				EA0D58260F5C8990002667B4 /* FMDatabaseAdditions.h */,
+				EA0D58270F5C8990002667B4 /* FMDatabaseAdditions.m */,
+				EA0D58290F5C8990002667B4 /* FMResultSet.h */,
+				EA0D582A0F5C8990002667B4 /* FMResultSet.m */,
+			);
+			name = fmdb;
 			sourceTree = "<group>";
 		};
 		EAAF74BE0F5357DB00857BBC /* Model */ = {
@@ -256,6 +302,12 @@
 				EAF747840F58FA7600967CF4 /* QuickListItem.m in Sources */,
 				EABB18690F5A0F5C00BF2C75 /* AddQuickAddItemViewController.m in Sources */,
 				EABB19290F5A1D5600BF2C75 /* SettingsViewController.m in Sources */,
+				EA0D580B0F5C8890002667B4 /* FmdbMigration.m in Sources */,
+				EA0D580C0F5C8890002667B4 /* FmdbMigrationColumn.m in Sources */,
+				EA0D580D0F5C8890002667B4 /* FmdbMigrationManager.m in Sources */,
+				EA0D582B0F5C8990002667B4 /* FMDatabase.m in Sources */,
+				EA0D582C0F5C8990002667B4 /* FMDatabaseAdditions.m in Sources */,
+				EA0D582E0F5C8990002667B4 /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

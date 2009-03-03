@@ -15,9 +15,10 @@
 @class GroceryListItem;
 @class QuickListItem;
 @class SettingsViewController;
+@class FMDatabase;
 
 @interface GroceryGetterAppDelegate : NSObject <UIApplicationDelegate> {
-	sqlite3 *db;
+	FMDatabase *db;
 	NSMutableArray *fullGroceryList;
 	NSMutableArray *incompleteGroceryList;
 	NSMutableArray *completeGroceryList;

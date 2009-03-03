@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 
+@class FMDatabase;
+
 @interface GroceryListItem : NSObject {
     // The object keeps track of the database it came from.
-    sqlite3 *database;
+    FMDatabase *database;
 	NSInteger pk;
 	NSString *title;
 	BOOL complete;
@@ -24,13 +26,12 @@
 @property (assign, nonatomic) NSInteger position;
 @property (assign, nonatomic) BOOL complete;
 
-+ (void) deletePreparedStatements;
-+ (NSArray *) findAllGroceryListItemsInOrderInDatabase:(sqlite3 *)db;
-+ (NSArray *) findAllCompleteGroceryListItemsInOrderInDatabase:(sqlite3 *)db;
-+ (NSArray *) findAllIncompleteGroceryListItemsInOrderInDatabase:(sqlite3 *)db;
++ (NSArray *) findAllGroceryListItemsInOrderInDatabase:(FMDatabase *)db;
++ (NSArray *) findAllCompleteGroceryListItemsInOrderInDatabase:(FMDatabase *)db;
++ (NSArray *) findAllIncompleteGroceryListItemsInOrderInDatabase:(FMDatabase *)db;
 
-- (id) initWithDatabase:(sqlite3 *)db;
-- (id) createWithTitle:(NSString *)t withDatabase:(sqlite3 *)db;
+- (id) initWithDatabase:(FMDatabase *)db;
+- (id) initWithTitle:(NSString *)t withDatabase:(FMDatabase *)db;
 - (void) create;
 - (void) save;
 - (void) destroy;

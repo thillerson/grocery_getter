@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 
+@class FMDatabase;
+
 @interface QuickListItem : NSObject {
     // The object keeps track of the database it came from.
-    sqlite3 *database;
+    FMDatabase *database;
 	NSInteger pk;
 	NSString *title;
 	NSInteger position;
@@ -23,11 +25,10 @@
 @property (copy, nonatomic) NSString *title;
 @property (assign, nonatomic) NSInteger position;
 
-+ (void) deletePreparedStatements;
-+ (NSArray *) findAllQuickListItemsInOrderInDatabase:(sqlite3 *)db;
++ (NSArray *) findAllQuickListItemsInOrderInDatabase:(FMDatabase *)db;
 
-- (id) initWithDatabase:(sqlite3 *)db;
-- (id) createWithTitle:(NSString *)t withDatabase:(sqlite3 *)db;
+- (id) initWithDatabase:(FMDatabase *)db;
+- (id) initWithTitle:(NSString *)t withDatabase:(FMDatabase *)db;
 - (void) create;
 - (void) save;
 - (void) destroy;

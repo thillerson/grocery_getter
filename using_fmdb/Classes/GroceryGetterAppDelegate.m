@@ -13,11 +13,14 @@
 #import "QuickAddViewController.h"
 #import "GroceryListItem.h"
 #import "QuickListItem.h"
+#import "FMDatabase.h"
+#import "FMDatabaseAdditions.h"
 
 @implementation GroceryGetterAppDelegate
 
 @synthesize window, navigationController, groceryListController, addListItemController, fullGroceryList, incompleteGroceryList, completeGroceryList, quickAddList;
 
+#pragma mark -
 #pragma mark List Item API
 
 - (void) addItemToList:(NSString *)title {
@@ -78,6 +81,7 @@
 	}
 }
 
+#pragma mark -
 #pragma mark Database Methods
 
 - (void)createEditableCopyOfDatabaseIfNeeded {
@@ -97,19 +101,28 @@
     }
 }
 
-- (void) loadData {
+- (void) initializeData {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"groceries.db"];
-    if (sqlite3_open([path UTF8String], &db) == SQLITE_OK) {
-		self.quickAddList = (NSMutableArray *)[QuickListItem findAllQuickListItemsInOrderInDatabase:db];
+	db = [[FMDatabase databaseWithPath:path] retain];
+    if (![db open]) {
+		NSAssert1(0, @"Failed to open database: '%s'.", [db lastErrorMessage]);
+    } else {
 		[self reloadGroceryList];
-	} else {
-        sqlite3_close(db);
-        NSAssert1(0, @"Failed to open database: '%s'.", sqlite3_errmsg(db));
+		self.quickAddList = (NSMutableArray *)[QuickListItem findAllQuickListItemsInOrderInDatabase:db];
 	}
+	// old:
+	//    if (sqlite3_open([path UTF8String], &db) == SQLITE_OK) {
+	//		self.quickAddList = (NSMutableArray *)[QuickListItem findAllQuickListItemsInOrderInDatabase:db];
+	//		[self reloadGroceryList];
+	//	} else {
+	//        sqlite3_close(db);
+	//        NSAssert1(0, @"Failed to open database: '%s'.", sqlite3_errmsg(db));
+	//	}
 }
 
+#pragma mark -
 #pragma mark Navigation Actions
 
 - (void) showToolbar {
@@ -187,11 +200,12 @@
 	[self toggleSettingsView];
 }
 
+#pragma mark -
 #pragma mark Standard Methods
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     [self createEditableCopyOfDatabaseIfNeeded];
-	[self loadData];
+	[self initializeData];
 	navigationController.viewControllers = [NSArray arrayWithObject:groceryListController];
     
     [window insertSubview:navigationController.view belowSubview:toolbar];
@@ -200,8 +214,8 @@
 
 
 - (void)dealloc {
-	[QuickListItem deletePreparedStatements];
-	[GroceryListItem deletePreparedStatements];
+	[db close];
+	[db release];
 	[toolbar release];
 	[navigationController release];
     [groceryListController release];
