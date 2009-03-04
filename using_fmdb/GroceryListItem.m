@@ -16,14 +16,14 @@
 @synthesize pk, title, complete, position;
 
 + (NSArray *) findAllGroceryListItemsInOrderInDatabase:(FMDatabase *)db {
-	FMResultSet *results = [db executeQuery:@"SELECT pk, title, complete, position FROM groceries ORDER BY complete, position"];
+	FMResultSet *results = [db executeQuery:@"SELECT id, title, complete, position FROM groceries ORDER BY complete, position"];
     if ([db hadError]) {
         NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
     }
 	NSMutableArray *list= [NSMutableArray array];
 	while ([results next]) {
 		GroceryListItem *item = [[GroceryListItem alloc] initWithDatabase:db];
-		item.pk = [results intForColumn:@"pk"];
+		item.pk = [results intForColumn:@"id"];
 		item.title = [results stringForColumn:@"title"];
 		item.complete = [results boolForColumn:@"complete"];
 		item.position = [results intForColumn:@"position"];
@@ -51,14 +51,14 @@
 }
 
 + (NSArray *) findAllCompleteGroceryListItemsInOrderInDatabase:(FMDatabase *)db {
-	FMResultSet *results = [db executeQuery:@"SELECT pk, title, complete, position FROM groceries WHERE complete=1 ORDER BY position"];
+	FMResultSet *results = [db executeQuery:@"SELECT id, title, complete, position FROM groceries WHERE complete=1 ORDER BY position"];
     if ([db hadError]) {
         NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
     }
 	NSMutableArray *list= [NSMutableArray array];
 	while ([results next]) {
 		GroceryListItem *item = [[GroceryListItem alloc] initWithDatabase:db];
-		item.pk = [results intForColumn:@"pk"];
+		item.pk = [results intForColumn:@"id"];
 		item.title = [results stringForColumn:@"title"];
 		item.complete = [results boolForColumn:@"complete"];
 		item.position = [results intForColumn:@"position"];
@@ -70,14 +70,14 @@
 }
 
 + (NSArray *) findAllIncompleteGroceryListItemsInOrderInDatabase:(FMDatabase *)db {
-	FMResultSet *results = [db executeQuery:@"SELECT pk, title, complete, position FROM groceries WHERE complete=0 ORDER BY position"];
+	FMResultSet *results = [db executeQuery:@"SELECT id, title, complete, position FROM groceries WHERE complete=0 ORDER BY position"];
     if ([db hadError]) {
         NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
     }
 	NSMutableArray *list= [NSMutableArray array];
 	while ([results next]) {
 		GroceryListItem *item = [[GroceryListItem alloc] initWithDatabase:db];
-		item.pk = [results intForColumn:@"pk"];
+		item.pk = [results intForColumn:@"id"];
 		item.title = [results stringForColumn:@"title"];
 		item.complete = [results boolForColumn:@"complete"];
 		item.position = [results intForColumn:@"position"];
@@ -108,7 +108,7 @@
     if ([database hadError]) {
         NSLog(@"Err %d: %@", [database lastErrorCode], [database lastErrorMessage]);
     }
-	pk = [database lastInsertRowId];
+	self.pk = [database lastInsertRowId];
 	
 	// OLD
 //    if (insert_statement == nil) {
@@ -136,11 +136,11 @@
 	}
 	
 	[database beginTransaction];
-	[database executeUpdate:@"UPDATE groceries SET title=?, complete=?, position=? WHERE pk=?",
-		title,
-		[NSNumber numberWithBool:complete],
-		[NSNumber numberWithInt:position],
-		[NSNumber numberWithInt:pk]];
+	[database executeUpdate:@"UPDATE groceries SET title=?, complete=?, position=? WHERE id=?",
+		self.title,
+		[NSNumber numberWithBool:self.complete],
+		[NSNumber numberWithInt:self.position],
+		[NSNumber numberWithInt:self.pk]];
     [database commit];
     if ([database hadError]) {
         NSLog(@"Err %d: %@", [database lastErrorCode], [database lastErrorMessage]);
@@ -174,7 +174,7 @@
 }
 
 - (void) destroy {
-	[database executeUpdate:@"DELETE FROM groceries WHERE pk=?",
+	[database executeUpdate:@"DELETE FROM groceries WHERE id=?",
 		[NSNumber numberWithInt:pk]];
     if ([database hadError]) {
         NSLog(@"Err %d: %@", [database lastErrorCode], [database lastErrorMessage]);
@@ -194,7 +194,7 @@
 }
 
 - (void) toggleComplete {
-	complete = !complete;
+	self.complete = !self.complete;
 	[self save];
 }
 

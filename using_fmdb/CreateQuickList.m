@@ -13,7 +13,7 @@
 @implementation CreateQuickList
 - (void) up {
 	[self createTable:@"quick_list" withColumns:[NSArray arrayWithObjects:
-		[FmdbMigrationColumn columnWithColumnName:@"pk" columnType:@"integer"],
+		[FmdbMigrationColumn columnWithColumnName:@"id" columnType:@"INTEGER PRIMARY KEY AUTOINCREMENT"],
 		[FmdbMigrationColumn columnWithColumnName:@"title" columnType:@"text"],
 		[FmdbMigrationColumn columnWithColumnName:@"position" columnType:@"integer"],
 		nil]];

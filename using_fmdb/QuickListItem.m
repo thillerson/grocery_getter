@@ -19,14 +19,14 @@
 #pragma mark Class Methods
 
 + (NSArray *) findAllQuickListItemsInOrderInDatabase:(FMDatabase *)db {
-	FMResultSet *results = [db executeQuery:@"SELECT pk, title, position FROM quick_list ORDER BY position"];
+	FMResultSet *results = [db executeQuery:@"SELECT id, title, position FROM quick_list ORDER BY position"];
     if ([db hadError]) {
         NSLog(@"Err %d: %@", [db lastErrorCode], [db lastErrorMessage]);
     }
 	NSMutableArray *list= [NSMutableArray array];
 	while ([results next]) {
 		QuickListItem *item = [[QuickListItem alloc] initWithDatabase:db];
-		item.pk = [results intForColumn:@"pk"];
+		item.pk = [results intForColumn:@"id"];
 		item.title = [results stringForColumn:@"title"];
 		item.position = [results intForColumn:@"position"];
 		[list addObject:item];
@@ -74,7 +74,7 @@
 		return;
 	}
 	[database beginTransaction];
-	[database executeUpdate:@"UPDATE quick_list SET title=?, position=? WHERE pk=?",
+	[database executeUpdate:@"UPDATE quick_list SET title=?, position=? WHERE id=?",
 	 title,
 	 [NSNumber numberWithInt:position],
 	[NSNumber numberWithInt:pk]];
@@ -87,7 +87,7 @@
 
 - (void) destroy {
 	[database beginTransaction];
-	[database executeUpdate:@"DELETE FROM groceries WHERE pk=?",
+	[database executeUpdate:@"DELETE FROM groceries WHERE id=?",
 	 [NSNumber numberWithInt:pk]];
     [database commit];
     if ([database hadError]) {

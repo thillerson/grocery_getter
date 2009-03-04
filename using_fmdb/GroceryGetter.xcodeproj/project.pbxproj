@@ -29,7 +29,6 @@
 		EABB186C0F5A108600BF2C75 /* AddQuickAddItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */; };
 		EABB191E0F5A1BE600BF2C75 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EABB191D0F5A1BE600BF2C75 /* SettingsView.xib */; };
 		EABB19290F5A1D5600BF2C75 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABB19280F5A1D5600BF2C75 /* SettingsViewController.m */; };
-		EABB1C3D0F5B7E7200BF2C75 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EABB1C3C0F5B7E7200BF2C75 /* Settings.bundle */; };
 		EADDA7D40F5E08CB0098DBD8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDA7D30F5E08CB0098DBD8 /* Icon.png */; };
 		EAF54BC60F58931C00DBBFBC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */; };
 		EAF54BCA0F58942D00DBBFBC /* QuickAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF54BC90F58942D00DBBFBC /* QuickAddViewController.m */; };
@@ -78,7 +77,6 @@
 		EABB191D0F5A1BE600BF2C75 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		EABB19270F5A1D5600BF2C75 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		EABB19280F5A1D5600BF2C75 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		EABB1C3C0F5B7E7200BF2C75 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EADDA7D30F5E08CB0098DBD8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		EAF54BC50F58931C00DBBFBC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		EAF54BC80F58942D00DBBFBC /* QuickAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickAddViewController.h; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 				EAF54BCB0F58946500DBBFBC /* QuickAddView.xib */,
 				EABB186B0F5A108600BF2C75 /* AddQuickAddItemView.xib */,
 				EABB191D0F5A1BE600BF2C75 /* SettingsView.xib */,
-				EABB1C3C0F5B7E7200BF2C75 /* Settings.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -298,7 +295,6 @@
 				EAF54BCC0F58946500DBBFBC /* QuickAddView.xib in Resources */,
 				EABB186C0F5A108600BF2C75 /* AddQuickAddItemView.xib in Resources */,
 				EABB191E0F5A1BE600BF2C75 /* SettingsView.xib in Resources */,
-				EABB1C3D0F5B7E7200BF2C75 /* Settings.bundle in Resources */,
 				EA0D599E0F5D00FB002667B4 /* groceries.db in Resources */,
 				EADDA7D40F5E08CB0098DBD8 /* Icon.png in Resources */,
 			);

@@ -167,7 +167,7 @@ static sqlite3_stmt *delete_statement = nil;
 }
 
 - (void) toggleComplete {
-	complete = !complete;
+	self.complete = !self.complete;
 	[self save];
 }
 
@@ -191,10 +191,10 @@ static sqlite3_stmt *delete_statement = nil;
 	position = newPosition;
 }
 
-- (void)setComplete:(BOOL)isComplete {
-    if ((complete == isComplete)) return;
+- (void)setComplete:(BOOL)c {
+    if ((complete == c)) return;
     dirty = YES;
-	complete = isComplete;
+	complete = c;
 }
 
 

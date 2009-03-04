@@ -369,9 +369,9 @@
     sqlite3_stmt *pStmt      = 0x00;
     FMStatement *cachedStmt = 0x00;
     
-    if (traceExecution && sql) {
+//    if (traceExecution && sql) {
         NSLog(@"%@ executeUpdate: %@", self, sql);
-    }
+//    }
     
     if (shouldCacheStatements) {
         cachedStmt = [self cachedStatementForQuery:sql];
