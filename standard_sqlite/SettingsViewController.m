@@ -37,7 +37,6 @@
     return cell;
 }
 
-
 #pragma mark Standard Methods
 
 - (void)viewWillAppear:(BOOL)animated {

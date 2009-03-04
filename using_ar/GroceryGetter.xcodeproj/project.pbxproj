@@ -33,6 +33,7 @@
 		EA380FF30F5D96880031C913 /* FmdbMigrationColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = EA380FEF0F5D96880031C913 /* FmdbMigrationColumn.m */; };
 		EA380FF40F5D96880031C913 /* FmdbMigrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA380FF10F5D96880031C913 /* FmdbMigrationManager.m */; };
 		EA3810320F5D98160031C913 /* GroceryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3810310F5D98160031C913 /* GroceryListItem.m */; };
+		EADDA7C70F5E08B10098DBD8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EADDA7C60F5E08B10098DBD8 /* Icon.png */; };
 		F802A4C70E2A9FAC00648F66 /* irregulars.plist in Resources */ = {isa = PBXBuildFile; fileRef = F802A4BF0E2A9FAC00648F66 /* irregulars.plist */; };
 		F802A4C80E2A9FAC00648F66 /* plurals.plist in Resources */ = {isa = PBXBuildFile; fileRef = F802A4C10E2A9FAC00648F66 /* plurals.plist */; };
 		F802A4C90E2A9FAC00648F66 /* singulars.plist in Resources */ = {isa = PBXBuildFile; fileRef = F802A4C30E2A9FAC00648F66 /* singulars.plist */; };
@@ -110,6 +111,7 @@
 		EA380FF10F5D96880031C913 /* FmdbMigrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FmdbMigrationManager.m; path = Classes/FMDBMigrationManager/FmdbMigrationManager.m; sourceTree = "<group>"; };
 		EA3810300F5D98160031C913 /* GroceryListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryListItem.h; sourceTree = "<group>"; };
 		EA3810310F5D98160031C913 /* GroceryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryListItem.m; sourceTree = "<group>"; };
+		EADDA7C60F5E08B10098DBD8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		F802A4C00E2A9FAC00648F66 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = "../activerecord-read-only/English.lproj/irregulars.plist"; sourceTree = SOURCE_ROOT; };
 		F802A4C20E2A9FAC00648F66 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = "../activerecord-read-only/English.lproj/plurals.plist"; sourceTree = SOURCE_ROOT; };
 		F802A4C40E2A9FAC00648F66 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = "../activerecord-read-only/English.lproj/singulars.plist"; sourceTree = SOURCE_ROOT; };
@@ -226,6 +228,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EADDA7C60F5E08B10098DBD8 /* Icon.png */,
 				EA380FE10F5D96690031C913 /* groceries.db */,
 				EA380F9C0F5D94D20031C913 /* AddGroceryListItemView.xib */,
 				EA380F9D0F5D94D20031C913 /* AddQuickAddItemView.xib */,
@@ -511,6 +514,7 @@
 				EA380FA60F5D94D20031C913 /* QuickAddView.xib in Resources */,
 				EA380FA70F5D94D20031C913 /* SettingsView.xib in Resources */,
 				EA380FE20F5D96690031C913 /* groceries.db in Resources */,
+				EADDA7C70F5E08B10098DBD8 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
